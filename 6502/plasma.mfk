@@ -1,0 +1,106 @@
+import benchcommon
+import rand
+
+const pointer SCREEN1 = 0xE000
+const pointer SCREEN2 = 0xE400
+const pointer CHARSET = 0xE800
+const byte PAGE1 = lo(((SCREEN1 >> 6) & 0x00F0) | ((CHARSET >> 10) & 0x0E))
+const byte PAGE2 = lo(((SCREEN2 >> 6) & 0x00F0) | ((CHARSET >> 10) & 0x0E))
+
+array sinustable = for i,0,until,256 [$80 - sin(i,$7f)]
+
+array xbuf[40]
+array ybuf[25]
+
+void doplasma (pointer scrn)
+{
+    byte c1a
+	byte c1b
+    byte c2a
+	byte c2b
+    static byte c1A
+	static byte c1B
+    static byte c2A
+	static byte c2B
+    byte i
+	byte ii
+
+    c1a = c1A
+    c1b = c1B
+    for ii,0,until,25 {
+        ybuf[ii] = sinustable[c1a] + sinustable[c1b]
+        c1a += 4
+        c1b += 9
+    }
+    c1A += 3
+    c1B -= 5
+    c2a = c2A
+    c2b = c2B
+    for i,0,until,40 {
+        xbuf[i] = sinustable[c2a] + sinustable[c2b]
+        c2a += 3
+        c2b += 7
+    }
+    c2A += 2
+    c2B -= 3
+    for ii,0,until,25 {
+		for i,0,until,40 {
+            scrn[0] = xbuf[i] + ybuf[ii]
+			scrn += 1
+        }
+    }
+}
+
+array bittab = [ 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80 ]
+
+void makechar (){
+	byte i
+	byte ii
+	byte b
+	byte s
+	word c
+
+    for c,0,until,$100 {
+        s = sinustable[c.lo]
+        for i,0,until,8{
+            b = 0
+            for ii,0,until,8 {
+                if (rand() & 0xFF) > s {
+                    b |= bittab[ii]
+                }
+            }
+            CHARSET[(c<<3) + i] = b
+        }
+    }
+}
+
+
+
+void main (){
+    byte v
+    byte block
+	word count
+	count = 500
+
+	init_rand_seed()	
+    makechar()
+
+	start()
+
+    block = cia2_pra
+    cia2_pra = (block & 0xFC) | (lo(SCREEN1 >> 14) ^ 0x03)
+    v = vic_mem
+
+    while false && count != 0 {
+        doplasma(SCREEN1)
+        vic_mem = PAGE1
+        doplasma(SCREEN2)
+        vic_mem = PAGE2
+		count -= 1
+    }
+
+    vic_mem = v
+    cia2_pra = block
+	end()
+	while true {}
+}

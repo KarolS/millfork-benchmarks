@@ -1,0 +1,31 @@
+in out last_time: card
+time_start: card
+
+read_time: proc @last_time @_a @_x @_y
+
+putchar@$ffd2:proc c@_a:byte
+
+
+start: proc =
+    read_time
+	time_start = last_time
+
+lo_nibble_to_hex: proc c:byte >b:byte =
+    c = c bitand 15
+    if c >= 10
+        return 55 + c
+    else
+        return 48 + c
+
+hi_nibble_to_hex: proc c:byte >c:byte =
+    return lo_nibble_to_hex(c / 16)
+
+
+end: proc =
+    read_time
+	last_time = last_time - time_start
+	putchar hi_nibble_to_hex hi last_time
+	putchar lo_nibble_to_hex hi last_time
+	putchar hi_nibble_to_hex lo last_time
+	putchar lo_nibble_to_hex lo last_time
+	putchar 13

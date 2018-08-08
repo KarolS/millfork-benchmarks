@@ -1,0 +1,74 @@
+import benchcommon
+
+const pointer SCREEN = 0x4000
+
+array sinustable = for i,0,until,256 [$80 - sin(i,$7f)]
+
+array line_map[192]
+
+array blob = [0,8,$18,$1c,$7c,$7e,$f7,$ff]
+
+array xbuf[32]
+array ybuf[192]
+
+byte c1A
+byte c1B
+byte c2A
+byte c2B
+
+void doplasma ()
+{
+    pointer scrn
+    byte c1a
+	byte c1b
+    byte c2a
+	byte c2b
+    byte i
+	byte ii
+
+    c1a = c1A
+    c1b = c1B
+    for ii,0,until,192 {
+        ybuf[ii] = sinustable[c1a] + sinustable[c1b]
+        c1a += 4
+        c1b += 9
+    }
+    c1A += 3
+    c1B -= 5
+    c2a = c2A
+    c2b = c2B
+    for i,0,until,32 {
+        xbuf[i] = sinustable[c2a] + sinustable[c2b]
+        c2a += 3
+        c2b += 7
+    }
+    c2A += 2
+    c2B -= 3
+	scrn = SCREEN
+    for ii,0,until,192 {
+		for i,0,until,32 {
+            scrn[0] = blob[(xbuf[i] + ybuf[line_map[ii]]) >> 5]
+			scrn += 1
+        }
+    }
+}
+
+
+void main (){
+    byte v
+    byte block
+	word count
+	count = 20
+	
+	for v,0,paralleluntil,192 {
+		line_map[v] = (v & 0xc0) | ((v & 7) << 3) | ((v & 0x38) >> 3)
+	}
+
+	start()
+    while count != 0 {
+        doplasma()
+		count -= 1
+    }
+	end()
+	while true {}
+}

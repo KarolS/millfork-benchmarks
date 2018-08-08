@@ -1,0 +1,29 @@
+int24 last_time @$cff0
+int24 time_start @$cff8
+
+inline asm void read_time() {
+	jsr $FFDE
+	sta last_time
+	stx last_time + 1
+	sty last_time + 2
+	rts
+}
+
+
+
+inline void start() {
+	read_time()
+	time_start = last_time
+}
+
+inline void end() {
+	read_time()
+	last_time -= time_start
+	putchar(hi_nibble_to_hex(last_time.b2))
+	putchar(lo_nibble_to_hex(last_time.b2))
+	putchar(hi_nibble_to_hex(last_time.b1))
+	putchar(lo_nibble_to_hex(last_time.b1))
+	putchar(hi_nibble_to_hex(last_time.b0))
+	putchar(lo_nibble_to_hex(last_time.b0))
+	putchar(13)
+}

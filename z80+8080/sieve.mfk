@@ -1,0 +1,37 @@
+import benchcommon
+
+const word COUNT = 16384
+const word SQRT_COUNT = 128
+array Sieve[COUNT]
+
+void round(){
+    pointer Z
+    pointer S
+    word I
+    word J
+    for Z,Sieve.addr,paralleluntil,Sieve.addr+COUNT{
+        Z[0] = 0
+    }
+    I = 2
+    while I < SQRT_COUNT {
+        if Sieve[I] == 0 {
+            //* Prime number - mark multiples */
+            J = I<<1
+            S = Sieve + J
+            while J < COUNT {
+                S[0] = 1
+                S += I
+                J += I
+            }
+        }
+        I += 1
+    }
+}
+
+void main() {
+	start()
+	round()
+	round()
+	round()
+	end()
+}

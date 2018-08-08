@@ -1,0 +1,30 @@
+use c64
+use benchcommon
+
+const COUNT = 16384
+const SQRT_COUNT = 128
+Sieve:array(COUNT) of byte
+
+round: proc =
+    S: card
+    I: card
+    J: card
+    for ii:0..(COUNT-1)
+        Sieve(ii) = 0
+    I = 2
+    while I < SQRT_COUNT
+        if Sieve(I) = 0
+            ;//* Prime number - mark multiples */
+            J = I * 2
+            S = J
+            while J < COUNT
+                Sieve(S) = 1
+                S = S + I
+                J = J + I
+        I = I + 1
+
+start
+round
+round
+round
+end

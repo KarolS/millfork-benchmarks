@@ -1,0 +1,26 @@
+word rand_seed
+
+asm byte rand() {
+	ldx #8   
+	lda rand_seed+0
+__rand_loop:
+	asl     
+	rol rand_seed+1
+	bcc __no_eor
+	eor #$2D 
+__no_eor:
+	dex
+	bne __rand_loop
+	sta rand_seed+0
+	? rts
+}
+
+inline void init_rand_seed() {
+	poke($D40E, $ff)
+	poke($D40F, $ff)
+	poke($D412, $80)
+	while vic_raster != $70 {}
+	rand_seed.hi = peek($D41B)
+	while vic_raster != $40 {}
+	rand_seed.lo = peek($D41B)
+}
