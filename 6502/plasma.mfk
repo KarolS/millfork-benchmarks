@@ -7,12 +7,12 @@ const pointer CHARSET = 0xE800
 const byte PAGE1 = lo(((SCREEN1 >> 6) & 0x00F0) | ((CHARSET >> 10) & 0x0E))
 const byte PAGE2 = lo(((SCREEN2 >> 6) & 0x00F0) | ((CHARSET >> 10) & 0x0E))
 
-array sinustable = for i,0,until,256 [$80 - sin(i,$7f)]
+array sinustable align(fast) = for i,0,until,256 [$80 - sin(i,$7f)]
 
-array xbuf[40]
-array ybuf[25]
+array xbuf[40] align(fast)
+array ybuf[25] align(fast)
 
-void doplasma (pointer scrn)
+void doplasma (pointer scrn) align(fast)
 {
     byte c1a
 	byte c1b

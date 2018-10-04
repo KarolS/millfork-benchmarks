@@ -2,22 +2,21 @@ import benchcommon
 
 const pointer SCREEN = 0x4000
 
-array sinustable = for i,0,until,256 [$80 - sin(i,$7f)]
+array sinustable align(fast) = for i,0,until,256 [$80 - sin(i,$7f)]
 
-array line_map[192]
+array line_map[192] align(fast)
 
-array blob = [0,8,$18,$1c,$7c,$7e,$f7,$ff]
+array blob align(fast) = [0,8,$18,$1c,$7c,$7e,$f7,$ff]
 
-array xbuf[32]
-array ybuf[192]
+array xbuf[32] align(fast)
+array ybuf[192] align(fast)
 
 byte c1A
 byte c1B
 byte c2A
 byte c2B
 
-void doplasma ()
-{
+void doplasma () align(fast) {
     pointer scrn
     byte c1a
 	byte c1b

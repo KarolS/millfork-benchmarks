@@ -2,9 +2,9 @@ import benchcommon
 
 const word COUNT = 16384
 const word SQRT_COUNT = 128
-array Sieve[COUNT]
+array Sieve[COUNT] align(256)
 
-void round(){
+void round() align(fast) {
     pointer Z
     pointer S
     word I

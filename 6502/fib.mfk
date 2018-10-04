@@ -1,6 +1,6 @@
 import benchcommon
 
-word fib(byte n) {
+word fib(byte n) align(fast) {
 	stack byte i
 	i = n
 	if i < 2 { return 1 }
