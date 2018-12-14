@@ -88,12 +88,12 @@ Results:
 
 | symbol            | frames (less is better) |
 |-|-:|
-| mfk-0.3.2-O1      | 2271 |
-| mfk-0.3.2-O4      | 1515 |
-| mfk-0.3.2-O4-ill  | 1515 |
+| mfk-0.3.2-O1      | 2258 |
+| mfk-0.3.2-O4      | 1476 |
+| mfk-0.3.2-O4-ill  | 1476 |
 | atalan-2011       | n/a |
 | cc65-2.16-unopt   | 4647 |
 | cc65-2.16-opt     | 3261 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1515|3261&chdl=mfk-0.3.2-O4|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1476|3261&chdl=mfk-0.3.2-O4|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
 
