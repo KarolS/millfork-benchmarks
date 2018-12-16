@@ -18,14 +18,15 @@ The result is displayed on the screen as a hexadecimal value. Results below have
 
 These benchmarks compare the Millfork compiler with the most popular C compiler for 6502, CC65, and with another 6502-oriented language, Atalan:
 
-| symbol            | compiler | version  | command line                                    | comment |
-|-------------------|----------|----------|-------------------------------------------------|-|
-| mfk-0.3.2-O1      | Millfork | 0.3.2    | `millfork -t c64 -O1`                           | minimal optimization level to not generate dumb code|
-| mfk-0.3.2-O4      | Millfork | 0.3.2    | `millfork -t c64 -O4 -fipo -finline`            | recommended options for good code |
-| mfk-0.3.2-O4-ill  | Millfork | 0.3.2    | `millfork -t c64 -O4 -fipo -finline -fillegals` | |
-| atalan-2011       | Atalan   | 20110319 | `atalan -o 9`                                   | |
-| cc65-2.16-unopt   | CC65     | 2.16     | `cl65 -t c64`                                   | no optimizations |
-| cc65-2.16-opt     | CC65     | 2.16     | `cl65 -t c64 -r -Oirs`                          | recommended options for good code |
+| symbol            | compiler | version  | command line                                          | comment |
+|-------------------|----------|----------|-------------------------------------------------------|-|
+| mfk-0.3.2-O1      | Millfork | 0.3.2    | `millfork -t c64 -O1`                                 | minimal optimization level to not generate dumb code|
+| mfk-0.3.2-O4      | Millfork | 0.3.2    | `millfork -t c64 -O4 -fipo -finline`                  | recommended options for good code |
+| mfk-0.3.2-O4-ill  | Millfork | 0.3.2    | `millfork -t c64 -O4 -fipo -finline -fillegals`       | |
+| mfk-0.3.2-O4-ss   | Millfork | 0.3.2    | `millfork -t c64 -O4 -fipo -finline -fsoftware-stack` | used only for the `fib` benchmark |
+| atalan-2011       | Atalan   | 20110319 | `atalan -o 9`                                         | |
+| cc65-2.16-unopt   | CC65     | 2.16     | `cl65 -t c64`                                         | no optimizations |
+| cc65-2.16-opt     | CC65     | 2.16     | `cl65 -t c64 -r -Oirs`                                | recommended options for good code |
 
 Remarks:
 
@@ -50,6 +51,7 @@ Results:
 | mfk-0.3.2-O1      | 381 |
 | mfk-0.3.2-O4      | 375 |
 | mfk-0.3.2-O4-ill  | 375 |
+| mfk-0.3.2-O4-ss   | – |
 | atalan-2011       | 566 |
 | cc65-2.16-unopt   | 1447 |
 | cc65-2.16-opt     | 397 |
@@ -71,6 +73,7 @@ Results:
 | mfk-0.3.2-O1      | 3459 |
 | mfk-0.3.2-O4      | 3458 |
 | mfk-0.3.2-O4-ill  | 3458 |
+| mfk-0.3.2-O4-ss   | – |
 | atalan-2011       | n/a |
 | cc65-2.16-unopt   | 30112 |
 | cc65-2.16-opt     | 4003 |
@@ -88,12 +91,13 @@ Results:
 
 | symbol            | frames (less is better) |
 |-|-:|
-| mfk-0.3.2-O1      | 2258 |
+| mfk-0.3.2-O1      | 2156 |
 | mfk-0.3.2-O4      | 1476 |
 | mfk-0.3.2-O4-ill  | 1476 |
+| mfk-0.3.2-O4-ss   | 1784 |
 | atalan-2011       | n/a |
 | cc65-2.16-unopt   | 4647 |
 | cc65-2.16-opt     | 3261 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1476|3261&chdl=mfk-0.3.2-O4|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1476|1784|3261&chdl=mfk-0.3.2-O4|mfk-0.3.2-O4-ss|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,66e266,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
 
