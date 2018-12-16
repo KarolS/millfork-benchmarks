@@ -52,7 +52,7 @@ Results:
 | zsdcc-20170101-unopt | 115 |
 | zsdcc-20170101-opt   | 115 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:102|124|695|115&chds=0,1000&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,226666&chxl=0:||&chxr=1,0,700)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:102|124|695|115&chds=0,1000&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,700)
 
 ### Benchmark `plasma`
 
@@ -74,7 +74,7 @@ Results:
 | zsdcc-20170101-unopt | 494 |
 | zsdcc-20170101-opt   | 492 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:485|503|1492|492&chds=0,1500&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,226666&chxl=0:||&chxr=1,0,1500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:485|503|1492|492&chds=0,1500&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1500)
 
 ### Benchmark `fib`
 
@@ -92,5 +92,5 @@ Results:
 | zsdcc-20170101-unopt | 599 |
 | zsdcc-20170101-opt   | 599 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:551|1079|982|599&chds=0,1100&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,226666&chxl=0:||&chxr=1,0,1100)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:551|1079|982|599&chds=0,1100&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1100)
 
