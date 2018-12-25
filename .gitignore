@@ -16,7 +16,13 @@
 *.obj
 *.prg
 *.tap
+*.TMP
 *.xex
 *-c-*
 *-sccz80
 !benchcommon.asm
+
+65c02/
+65816/
+gb/
+
