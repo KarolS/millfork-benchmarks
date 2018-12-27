@@ -76,12 +76,12 @@ static void doplasma (register unsigned char* scrn)
     c2A += 2;
     c2B -= 3;
     for (jj = 0; jj < 25; ++jj) {
-		/* incrementing the pointer is faster */
+        /* incrementing the pointer is faster */
         for (j = 0; j < 40; ++j, ++scrn) {
             *scrn = (xbuf[j] + ybuf[jj]);
         }
     }
-	
+    
 }
 
 
@@ -114,11 +114,11 @@ int main (void)
 {
     unsigned char v;
     unsigned char block;
-	unsigned int  count = 500;
-	
+    unsigned int  count = 500;
+    
     makechar();
 
-	start();
+    start();
 
     block = inb (&CIA2.pra);
     outb (&CIA2.pra, (block & 0xFC) | ((SCREEN1 >> 14) ^ 0x03));
@@ -135,14 +135,14 @@ int main (void)
         outb (&VIC.addr, PAGE2);
 
         /* Count frames */
-		--count;
+        --count;
     }
 
     outb (&VIC.addr, v);
     outb (&CIA2.pra, block);
 
     /* Reset screen colors */
-	end();
-	
+    end();
+    
     return EXIT_SUCCESS;
 }

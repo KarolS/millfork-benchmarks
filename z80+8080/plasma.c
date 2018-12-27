@@ -83,16 +83,16 @@ int main (void)
 {
     unsigned char v;
     unsigned char block;
-	unsigned int  count = 20;
-	for (v = 0; v < 192; ++v) {
-		line_map[v] = (v & 0xc0) | ((v & 7) << 3) | ((v & 0x38) >> 3);
-	}
-	start();
+    unsigned int  count = 20;
+    for (v = 0; v < 192; ++v) {
+        line_map[v] = (v & 0xc0) | ((v & 7) << 3) | ((v & 0x38) >> 3);
+    }
+    start();
     while (count) {
         doplasma ();
-		--count;
+        --count;
     }
-	end();
-	while (1) {}
+    end();
+    while (1) {}
     return EXIT_SUCCESS;
 }

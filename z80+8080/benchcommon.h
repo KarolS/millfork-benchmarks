@@ -1,44 +1,44 @@
 #ifdef __SDCC
-	#ifndef SDCC
-	#define SDCC
-	#endif
+    #ifndef SDCC
+    #define SDCC
+    #endif
 #endif
 
 #ifdef __SCCZ80
-	#ifndef SCCZ80
-	#define SCCZ80
-	#endif
+    #ifndef SCCZ80
+    #define SCCZ80
+    #endif
 #endif
 
 #ifdef SDCC
-	__at (0x5c78) long frames;
-	#define __fastcall(fn)    fn __z88dk_fastcall
-	#define OK
-	
-	static inline void di(void) {
-		__asm__("di");
-	}
-	static inline void ei(void) {
-		__asm__("ei");
-	}
+    __at (0x5c78) long frames;
+    #define __fastcall(fn)    fn __z88dk_fastcall
+    #define OK
+    
+    static inline void di(void) {
+        __asm__("di");
+    }
+    static inline void ei(void) {
+        __asm__("ei");
+    }
 #endif
 
 #ifdef SCCZ80
-	extern long frames @0x5c78;
-	#define __fastcall(fn)    __FASTCALL__ fn
-	#define __critical(fn)    __critical fn
-	#define OK
-	
-	static void di(void) {
-		#asm
-		di
-		#endasm
-	}
-	static void ei(void) {
-		#asm
-		ei
-		#endasm
-	}
+    extern long frames @0x5c78;
+    #define __fastcall(fn)    __FASTCALL__ fn
+    #define __critical(fn)    __critical fn
+    #define OK
+    
+    static void di(void) {
+        #asm
+        di
+        #endasm
+    }
+    static void ei(void) {
+        #asm
+        ei
+        #endasm
+    }
 #endif
 
 #ifndef OK 
@@ -61,13 +61,13 @@ static long Ticks;
 static long Start;
 
 static void snapshot(void){
-	di();
+    di();
     Ticks = frames & 0xffffff;
-	ei();
+    ei();
 }
 static void start(void) {
-	snapshot();
-	Start = Ticks;
+    snapshot();
+    Start = Ticks;
 }
 static void printTicks(void) {
     putchar(toHex(Ticks>>20));
@@ -79,7 +79,7 @@ static void printTicks(void) {
     putchar(13);
 }
 static void end(void) {
-	snapshot();
+    snapshot();
     Ticks -= Start;
     printTicks();
 }

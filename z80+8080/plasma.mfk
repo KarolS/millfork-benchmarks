@@ -19,11 +19,11 @@ byte c2B
 void doplasma () align(fast) {
     pointer scrn
     byte c1a
-	byte c1b
+    byte c1b
     byte c2a
-	byte c2b
+    byte c2b
     byte i
-	byte ii
+    byte ii
 
     c1a = c1A
     c1b = c1B
@@ -43,11 +43,11 @@ void doplasma () align(fast) {
     }
     c2A += 2
     c2B -= 3
-	scrn = SCREEN
+    scrn = SCREEN
     for ii,0,until,192 {
-		for i,0,until,32 {
+        for i,0,until,32 {
             scrn[0] = blob[(xbuf[i] + ybuf[line_map[ii]]) >> 5]
-			scrn += 1
+            scrn += 1
         }
     }
 }
@@ -56,18 +56,18 @@ void doplasma () align(fast) {
 void main (){
     byte v
     byte block
-	word count
-	count = 20
-	
-	for v,0,paralleluntil,192 {
-		line_map[v] = (v & 0xc0) | ((v & 7) << 3) | ((v & 0x38) >> 3)
-	}
+    word count
+    count = 20
+    
+    for v,0,paralleluntil,192 {
+        line_map[v] = (v & 0xc0) | ((v & 7) << 3) | ((v & 0x38) >> 3)
+    }
 
-	start()
+    start()
     while count != 0 {
         doplasma()
-		count -= 1
+        count -= 1
     }
-	end()
-	while true {}
+    end()
+    while true {}
 }

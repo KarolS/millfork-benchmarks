@@ -15,116 +15,116 @@ array ybuf[25] align(fast)
 void doplasma (pointer scrn) align(fast)
 {
     byte c1a
-	byte c1b
+    byte c1b
     byte c2a
-	byte c2b
+    byte c2b
     static byte c1A
-	static byte c1B
+    static byte c1B
     static byte c2A
-	static byte c2B
+    static byte c2B
     byte i
-	byte ii
-	asm {
-		?lda c1A
-		?sta c1a
-		?lda c1B
-		?sta c1b
-		
-		ldx #0		
-	__loop1:
-		?ldy c1a
-		lda sinustable,y
-		?ldy c1b
-		clc
-		adc sinustable,y
-		sta ybuf,x
-		?lda c1a
-		clc
-		adc #4
-		?sta c1a
-		?lda c1b
-		clc
-		adc #9
-		?sta c1b
-		inx
-		cpx #25
-		bne __loop1
-		
-		?lda c1A
-		clc
-		adc #3
-		?sta c1A
-		?lda c1B
-		sec
-		sbc #5
-		?sta c1b
-		
-		?lda c2A
-		?sta c2a
-		?lda c2B
-		?sta c2b
-				
-		ldx #0		
-	__loop2:
-		?ldy c2a
-		lda sinustable,y
-		?ldy c2b
-		clc
-		adc sinustable,y
-		sta xbuf,x
-		?lda c2a
-		clc
-		adc #4
-		?sta c2a
-		?lda c2b
-		clc
-		adc #9
-		?sta c2b
-		inx
-		cpx #40
-		bne __loop2
-		
-		?lda c2A
-		clc
-		adc #2
-		?sta c2A
-		?lda c2B
-		sec
-		sbc #3
-		?sta c2b
-		
-		ldx #0
-	__loop3:
-		ldy #0
-	__loop4:
-		lda xbuf,y
-		clc
-		adc ybuf,x
-		sta (scrn), y
-		iny 
-		cpy #40
-		bne __loop4
-		lda lo(scrn.lo)
-		clc
-		adc #40
-		sta lo(scrn.lo)
-		bcc __no_inc_srcnhi
-		inc lo(scrn.hi)
-	__no_inc_srcnhi:
-		inx
-		cpx #25
-		bne __loop3
-	}
+    byte ii
+    asm {
+        ?lda c1A
+        ?sta c1a
+        ?lda c1B
+        ?sta c1b
+        
+        ldx #0        
+    __loop1:
+        ?ldy c1a
+        lda sinustable,y
+        ?ldy c1b
+        clc
+        adc sinustable,y
+        sta ybuf,x
+        ?lda c1a
+        clc
+        adc #4
+        ?sta c1a
+        ?lda c1b
+        clc
+        adc #9
+        ?sta c1b
+        inx
+        cpx #25
+        bne __loop1
+        
+        ?lda c1A
+        clc
+        adc #3
+        ?sta c1A
+        ?lda c1B
+        sec
+        sbc #5
+        ?sta c1b
+        
+        ?lda c2A
+        ?sta c2a
+        ?lda c2B
+        ?sta c2b
+                
+        ldx #0        
+    __loop2:
+        ?ldy c2a
+        lda sinustable,y
+        ?ldy c2b
+        clc
+        adc sinustable,y
+        sta xbuf,x
+        ?lda c2a
+        clc
+        adc #4
+        ?sta c2a
+        ?lda c2b
+        clc
+        adc #9
+        ?sta c2b
+        inx
+        cpx #40
+        bne __loop2
+        
+        ?lda c2A
+        clc
+        adc #2
+        ?sta c2A
+        ?lda c2B
+        sec
+        sbc #3
+        ?sta c2b
+        
+        ldx #0
+    __loop3:
+        ldy #0
+    __loop4:
+        lda xbuf,y
+        clc
+        adc ybuf,x
+        sta (scrn), y
+        iny 
+        cpy #40
+        bne __loop4
+        lda lo(scrn.lo)
+        clc
+        adc #40
+        sta lo(scrn.lo)
+        bcc __no_inc_srcnhi
+        inc lo(scrn.hi)
+    __no_inc_srcnhi:
+        inx
+        cpx #25
+        bne __loop3
+    }
 }
 
 array bittab = [ 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80 ]
 
 void makechar (){
-	byte i
-	byte ii
-	byte b
-	byte s
-	word c
+    byte i
+    byte ii
+    byte b
+    byte s
+    word c
 
     for c,0,until,$100 {
         s = sinustable[c.lo]
@@ -145,13 +145,13 @@ void makechar (){
 void main (){
     byte v
     byte block
-	word count
-	count = 500
+    word count
+    count = 500
 
-	init_rand_seed()	
+    init_rand_seed()    
     makechar()
 
-	start()
+    start()
 
     block = cia2_pra
     cia2_pra = (block & 0xFC) | (lo(SCREEN1 >> 14) ^ 0x03)
@@ -162,11 +162,11 @@ void main (){
         vic_mem = PAGE1
         doplasma(SCREEN2)
         vic_mem = PAGE2
-		count -= 1
+        count -= 1
     }
 
     vic_mem = v
     cia2_pra = block
-	end()
-	while true {}
+    end()
+    while true {}
 }

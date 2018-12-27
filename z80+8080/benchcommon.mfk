@@ -2,26 +2,26 @@ int24 last_time @$cff0
 int24 time_start @$cff8
 int24 FRAMES @23672
 macro void read_time() {
-	disable_irq()
-	last_time = FRAMES
-	enable_irq()
+    disable_irq()
+    last_time = FRAMES
+    enable_irq()
 }
 
 
 
 inline void start() {
-	read_time()
-	time_start = last_time
+    read_time()
+    time_start = last_time
 }
 
 inline void end() {
-	read_time()
-	last_time -= time_start
-	putchar(hi_nibble_to_hex(last_time.b2))
-	putchar(lo_nibble_to_hex(last_time.b2))
-	putchar(hi_nibble_to_hex(last_time.b1))
-	putchar(lo_nibble_to_hex(last_time.b1))
-	putchar(hi_nibble_to_hex(last_time.b0))
-	putchar(lo_nibble_to_hex(last_time.b0))
-	putchar(13)
+    read_time()
+    last_time -= time_start
+    putchar(hi_nibble_to_hex(last_time.b2))
+    putchar(lo_nibble_to_hex(last_time.b2))
+    putchar(hi_nibble_to_hex(last_time.b1))
+    putchar(lo_nibble_to_hex(last_time.b1))
+    putchar(hi_nibble_to_hex(last_time.b0))
+    putchar(lo_nibble_to_hex(last_time.b0))
+    putchar(13)
 }

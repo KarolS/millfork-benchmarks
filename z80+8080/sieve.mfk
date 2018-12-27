@@ -29,9 +29,9 @@ void round() align(fast) {
 }
 
 void main() {
-	start()
-	round()
-	round()
-	round()
-	end()
+    start()
+    round()
+    round()
+    round()
+    end()
 }

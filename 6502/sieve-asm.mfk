@@ -7,73 +7,73 @@ array Sieve[COUNT] align(256)
 void round() align(fast) {
     pointer Z
     pointer S
-	asm {
-		lda #hi(Sieve.addr + COUNT)-1
-		sta lo(Z.hi)
-		lda #0
-		sta lo(Z.lo)
-		tay
-		ldx #COUNT.hi
-	__zero_Z_1:
-		sta (Z),y
-		iny
-		bne __zero_Z_1
-		dec lo(Z.hi)
-		dex
-		bne __zero_Z_1
-		 
-		ldy #0
-		ldx #2
-	__while_start:
-		lda Sieve, x
-		bne __while_cond
-		txa
-		asl
-		sta lo(S.lo)
-		lda #0
-		adc #Sieve.addr.hi
-		sta lo(S.hi)
-		bcc __while2_cond
-		
-	__while2_start:
-		lda #1
-		sta (S),y
-		
-		txa
-		clc
-		adc lo(S.lo)
-		sta lo(S.lo)
-		bcc __no_Shi_inc
-		inc lo(S.hi)
-	__no_Shi_inc:
-		
-	__while2_cond:
-		lda lo(S.hi)
-		cmp #hi(Sieve + COUNT)
-		bcc __while2_start		
-		
-	__while_cond:
-		inx
-		txa
-		bpl __while_start
-		rts
-	}
+    asm {
+        lda #hi(Sieve.addr + COUNT)-1
+        sta lo(Z.hi)
+        lda #0
+        sta lo(Z.lo)
+        tay
+        ldx #COUNT.hi
+    __zero_Z_1:
+        sta (Z),y
+        iny
+        bne __zero_Z_1
+        dec lo(Z.hi)
+        dex
+        bne __zero_Z_1
+         
+        ldy #0
+        ldx #2
+    __while_start:
+        lda Sieve, x
+        bne __while_cond
+        txa
+        asl
+        sta lo(S.lo)
+        lda #0
+        adc #Sieve.addr.hi
+        sta lo(S.hi)
+        bcc __while2_cond
+        
+    __while2_start:
+        lda #1
+        sta (S),y
+        
+        txa
+        clc
+        adc lo(S.lo)
+        sta lo(S.lo)
+        bcc __no_Shi_inc
+        inc lo(S.hi)
+    __no_Shi_inc:
+        
+    __while2_cond:
+        lda lo(S.hi)
+        cmp #hi(Sieve + COUNT)
+        bcc __while2_start        
+        
+    __while_cond:
+        inx
+        txa
+        bpl __while_start
+        rts
+    }
 }
 
 void main() {
-	start()
-	
-	round()
-	round()
-	round()
-	round()
-	round()
-	
-	round()
-	round()
-	round()
-	round()
-	round()
-	
-	end()
+    start()
+    
+    round()
+    round()
+    round()
+    round()
+    round()
+    
+    round()
+    round()
+    round()
+    round()
+    round()
+    
+    end()
 }

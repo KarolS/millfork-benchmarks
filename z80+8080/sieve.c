@@ -8,7 +8,7 @@ void round(void) {
     register unsigned char* S;
     register unsigned       I;
     register unsigned       J;
-	memset(Sieve, 0, COUNT);
+    memset(Sieve, 0, COUNT);
     I = 2;
     while (I < SQRT_COUNT) {
         if (Sieve[I] == 0) {
@@ -26,12 +26,12 @@ void round(void) {
 }
 int main (void)
 {
-	start();
-	round();
-	round();
-	round();
-	end();
-	while(1);
+    start();
+    round();
+    round();
+    round();
+    end();
+    while(1);
     return EXIT_SUCCESS;
 }
 

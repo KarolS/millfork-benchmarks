@@ -25,21 +25,21 @@ void round(void) {
 
 int main (void)
 {
-	start();
-	
-	round();
-	round();
-	round();
-	round();
-	round();
-	
-	round();
-	round();
-	round();
-	round();
-	round();
-	
-	end();
+    start();
+    
+    round();
+    round();
+    round();
+    round();
+    round();
+    
+    round();
+    round();
+    round();
+    round();
+    round();
+    
+    end();
     return EXIT_SUCCESS;
 }
 
