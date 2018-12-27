@@ -24,35 +24,97 @@ void doplasma (pointer scrn) align(fast)
 	static byte c2B
     byte i
 	byte ii
-
-    c1a = c1A
-    c1b = c1B
-    for ii,0,until,25 {
-        ybuf[ii] = sinustable[c1a] + sinustable[c1b]
-        c1a += 4
-        c1b += 9
-    }
-    c1A += 3
-    c1B -= 5
-    c2a = c2A
-    c2b = c2B
-    for i,0,until,40 {
-        xbuf[i] = sinustable[c2a] + sinustable[c2b]
-        c2a += 3
-        c2b += 7
-    }
-    c2A += 2
-    c2B -= 3
-	
-    byte j
-	byte jj
-    for jj,0,until,25 {
-		// indexing is faster
-		for j,0,until,40 {
-            scrn[j] = xbuf[j] + ybuf[jj]
-        }
-		scrn += 40
-    }
+	asm {
+		?lda c1A
+		?sta c1a
+		?lda c1B
+		?sta c1b
+		
+		ldx #0		
+	__loop1:
+		?ldy c1a
+		lda sinustable,y
+		?ldy c1b
+		clc
+		adc sinustable,y
+		sta ybuf,x
+		?lda c1a
+		clc
+		adc #4
+		?sta c1a
+		?lda c1b
+		clc
+		adc #9
+		?sta c1b
+		inx
+		cpx #25
+		bne __loop1
+		
+		?lda c1A
+		clc
+		adc #3
+		?sta c1A
+		?lda c1B
+		sec
+		sbc #5
+		?sta c1b
+		
+		?lda c2A
+		?sta c2a
+		?lda c2B
+		?sta c2b
+				
+		ldx #0		
+	__loop2:
+		?ldy c2a
+		lda sinustable,y
+		?ldy c2b
+		clc
+		adc sinustable,y
+		sta xbuf,x
+		?lda c2a
+		clc
+		adc #4
+		?sta c2a
+		?lda c2b
+		clc
+		adc #9
+		?sta c2b
+		inx
+		cpx #40
+		bne __loop2
+		
+		?lda c2A
+		clc
+		adc #2
+		?sta c2A
+		?lda c2B
+		sec
+		sbc #3
+		?sta c2b
+		
+		ldx #0
+	__loop3:
+		ldy #0
+	__loop4:
+		lda xbuf,y
+		clc
+		adc ybuf,x
+		sta (scrn), y
+		iny 
+		cpy #40
+		bne __loop4
+		lda lo(scrn.lo)
+		clc
+		adc #40
+		sta lo(scrn.lo)
+		bcc __no_inc_srcnhi
+		inc lo(scrn.hi)
+	__no_inc_srcnhi:
+		inx
+		cpx #25
+		bne __loop3
+	}
 }
 
 array bittab = [ 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80 ]

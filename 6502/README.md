@@ -49,16 +49,16 @@ Results:
 
 | symbol            | frames (less is better) |
 |-|-:|
-| asm               | 701 |
+| asm               | 700 |
 | mfk-0.3.2-O1      | 763 |
 | mfk-0.3.2-O4      | 701 |
 | mfk-0.3.2-O4-ill  | 702 |
 | mfk-0.3.2-O4-ss   | – |
-| atalan-2011       | 1490 |
+| atalan-2011       | 1375 |
 | cc65-2.16-unopt   | 6331 |
 | cc65-2.16-opt     | 920 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:701|701|920|1490&chdl=asm|mfk-0.3.2-O4|cc65-2.16-opt|atalan-2011&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:700|701|920|1375&chdl=asm|mfk-0.3.2-O4|cc65-2.16-opt|atalan-2011&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
 
 ### Benchmark `plasma`
 
@@ -72,16 +72,16 @@ Results:
 
 | symbol            | frames (less is better) |
 |-|-:|
-| asm               | – |
-| mfk-0.3.2-O1      | 3459 |
-| mfk-0.3.2-O4      | 3458 |
-| mfk-0.3.2-O4-ill  | 3458 |
+| asm               | 1754 |
+| mfk-0.3.2-O1      | 1965 |
+| mfk-0.3.2-O4      | 1780 |
+| mfk-0.3.2-O4-ill  | 1764 |
 | mfk-0.3.2-O4-ss   | – |
 | atalan-2011       | n/a |
 | cc65-2.16-unopt   | 30112 |
 | cc65-2.16-opt     | 4003 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:3458|4003&chdl=mfk-0.3.2-O4|cc65-2.16-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,50000&chxr=1,0,5000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003&chdl=asm|mfk-0.3.2-O4|cc65-2.16-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000&chxl=0:||&chds=0,50000&chxr=1,0,5000)
 
 
 ### Benchmark `fib`

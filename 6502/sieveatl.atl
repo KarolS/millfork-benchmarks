@@ -6,7 +6,7 @@ const SQRT_COUNT = 128
 Sieve:array(COUNT) of byte
 
 round: proc =
-    I: card
+    I: byte
     J: card
     for ii:0..(COUNT-1)
         Sieve(ii) = 0

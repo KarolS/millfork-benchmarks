@@ -55,6 +55,7 @@ static void doplasma (register unsigned char* scrn)
     unsigned char c1A,c1B;
     unsigned char c2A,c2B;
     unsigned char i, ii;
+    unsigned char j, jj;
 
     c1a = c1A;
     c1b = c1B;
@@ -74,11 +75,13 @@ static void doplasma (register unsigned char* scrn)
     }
     c2A += 2;
     c2B -= 3;
-    for (ii = 0; ii < 25; ++ii) {
-        for (i = 0; i < 40; ++i, ++scrn) {
-            *scrn = (xbuf[i] + ybuf[ii]);
+    for (jj = 0; jj < 25; ++jj) {
+		/* incrementing the pointer is faster */
+        for (j = 0; j < 40; ++j, ++scrn) {
+            *scrn = (xbuf[j] + ybuf[jj]);
         }
     }
+	
 }
 
 
