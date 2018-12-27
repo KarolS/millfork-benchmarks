@@ -81,7 +81,7 @@ Results:
 
 ### Benchmark `fib`
 
-Source: [`fib.c`](./fib.c), [`fib.mfk`](./fib.mfk)
+Source: [`fib.c`](./fib.c), [`fib.mfk`](./fib.mfk), [`fib-asm.mfk`](./fib-asm.mfk)
 
 The benchmark calculates the first 25 Fibonacci numbers using the naïve recursive algorithm.
 

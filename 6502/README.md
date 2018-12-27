@@ -41,7 +41,7 @@ Remarks:
 
 ### Benchmark `sieve`
 
-Source: [`sieve.c`](./sieve.c), [`sieve.mfk`](./sieve.mfk), [`sieveatl.atl`](./sieveatl.atl)
+Source: [`sieve.c`](./sieve.c), [`sieve.mfk`](./sieve.mfk), [`sieve-asm.mfk`](./sieve-asm.mfk), [`sieveatl.atl`](./sieveatl.atl)
 
 The benchmark calculates all the prime numbers from 1 to 2^(14) using the Sieve of Erasthotenes algorithm. It does it ten times, for more precise results.
 
@@ -86,7 +86,7 @@ Results:
 
 ### Benchmark `fib`
 
-Source: [`fib.c`](./fib.c), [`fib.mfk`](./fib.mfk)
+Source: [`fib.c`](./fib.c), [`fib.mfk`](./fib.mfk), [`fib-asm.mfk`](./fib-asm.mfk)
 
 The benchmark calculates the first 25 Fibonacci numbers using the naïve recursive algorithm.
 
