@@ -81,7 +81,7 @@ Results:
 | cc65-2.16-unopt   | 30112 |
 | cc65-2.16-opt     | 4003 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1111|3458|4003&chdl=asm|mfk-0.3.2-O4|cc65-2.16-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000&chxl=0:||&chds=0,50000&chxr=1,0,5000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:3458|4003&chdl=mfk-0.3.2-O4|cc65-2.16-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,50000&chxr=1,0,5000)
 
 
 ### Benchmark `fib`
