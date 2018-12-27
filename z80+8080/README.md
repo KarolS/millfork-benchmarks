@@ -20,6 +20,7 @@ These benchmarks compare the Millfork compiler with two popular C compilers for 
 
 | symbol               | compiler | version  | command line                                                                               | comment |
 |----------------------|----------|----------|--------------------------------------------------------------------------------------------|-|
+| asm                  | Millfork | 0.3.2    | `millfork -t zxspectrum -O1`                                                               | assembly implementation |
 | mfk-0.3.2-z80        | Millfork | 0.3.2    | `millfork -t zxspectrum -O1`                                                               | the Z80 backend doesn't differentiate between optimization levels yet |
 | mfk-0.3.2-8080       | Millfork | 0.3.2    | `millfork -t zxspectrum_8080 -O1`                                                          | the same, but without Z80 extensions |
 | sccz80-20170112      | SCCZ80   | 20170112 | `zcc +zx -lndos -clib=ansi -O3 -Cc -do-inline -create-app`                                 | optimizations to give it a fighting chance |
@@ -46,6 +47,7 @@ Results:
 
 | symbol               | frames (less is better) |
 |----------------------|-------:|
+| asm                  | –   |
 | mfk-0.3.2-z80        | 102 |
 | mfk-0.3.2-8080       | 124 |
 | sccz80-20170112      | 695 |
@@ -68,6 +70,7 @@ Results:
 
 | symbol               | frames (less is better) |
 |----------------------|-------:|
+| asm                  | –   |
 | mfk-0.3.2-z80        | 485 |
 | mfk-0.3.2-8080       | 503 |
 | sccz80-20170112      | 1492 |
@@ -86,11 +89,12 @@ Results:
 
 | symbol               | frames (less is better) |
 |----------------------|-------:|
+| asm                  | 523 |
 | mfk-0.3.2-z80        | 551 |
 | mfk-0.3.2-8080       | 1079 |
 | sccz80-20170112      | 982 |
 | zsdcc-20170101-unopt | 599 |
 | zsdcc-20170101-opt   | 599 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:551|1079|982|599&chds=0,1100&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1100)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:523|551|1079|982|599&chds=0,1100&chdl=asm|mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1100)
 
