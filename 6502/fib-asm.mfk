@@ -1,0 +1,48 @@
+import benchcommon
+
+asm word fib(byte x) align(fast) {
+	cpx #2
+	bcs __fib_rec
+	lda #1
+	ldx #0
+	rts
+__fib_rec:
+	tya
+	pha
+	dex
+	txa
+	tay
+	jsr fib
+	pha
+	txa
+	pha
+	tya
+	tax
+	dex
+	jsr fib
+	? sta __reg.b0
+	? stx __reg.b1
+	pla
+	tax
+	pla
+	clc
+	? adc __reg.b0
+	? sta __reg.b0
+	txa
+	? adc __reg.b1
+	tax
+	pla
+	tay
+	? lda __reg.b0
+	rts
+}
+
+void main (){
+	byte i
+	start()
+	for i,0,to,24 {
+		putchar(lo(fib(i)) + 32)
+	}
+    putchar(13)
+	end()
+}

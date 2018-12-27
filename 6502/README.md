@@ -20,6 +20,7 @@ These benchmarks compare the Millfork compiler with the most popular C compiler 
 
 | symbol            | compiler | version  | command line                                          | comment |
 |-------------------|----------|----------|-------------------------------------------------------|-|
+| asm               | Millfork | 0.3.2    | `millfork -t c64 -O1`                                 | assembly implementation |
 | mfk-0.3.2-O1      | Millfork | 0.3.2    | `millfork -t c64 -O1`                                 | minimal optimization level to not generate dumb code|
 | mfk-0.3.2-O4      | Millfork | 0.3.2    | `millfork -t c64 -O4 -fipo -finline`                  | recommended options for good code |
 | mfk-0.3.2-O4-ill  | Millfork | 0.3.2    | `millfork -t c64 -O4 -fipo -finline -fillegals`       | |
@@ -42,21 +43,22 @@ Remarks:
 
 Source: [`sieve.c`](./sieve.c), [`sieve.mfk`](./sieve.mfk), [`sieveatl.atl`](./sieveatl.atl)
 
-The benchmark calculates all the prime numbers from 1 to 2^(14) using the Sieve of Erasthotenes algorithm. It does it three times, for more precise results.
+The benchmark calculates all the prime numbers from 1 to 2^(14) using the Sieve of Erasthotenes algorithm. It does it ten times, for more precise results.
 
 Results:
 
 | symbol            | frames (less is better) |
 |-|-:|
-| mfk-0.3.2-O1      | 381 |
-| mfk-0.3.2-O4      | 375 |
-| mfk-0.3.2-O4-ill  | 375 |
+| asm               | 701 |
+| mfk-0.3.2-O1      | 763 |
+| mfk-0.3.2-O4      | 701 |
+| mfk-0.3.2-O4-ill  | 702 |
 | mfk-0.3.2-O4-ss   | – |
-| atalan-2011       | 566 |
-| cc65-2.16-unopt   | 1447 |
-| cc65-2.16-opt     | 397 |
+| atalan-2011       | 1490 |
+| cc65-2.16-unopt   | 6331 |
+| cc65-2.16-opt     | 920 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:375|397|566&chdl=mfk-0.3.2-O4|cc65-2.16-opt|atalan-2011&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000,2200aa&chxl=0:||&chds=0,600&chxr=1,0,600)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:701|701|920|1490&chdl=asm|mfk-0.3.2-O4|cc65-2.16-opt|atalan-2011&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
 
 ### Benchmark `plasma`
 
@@ -70,6 +72,7 @@ Results:
 
 | symbol            | frames (less is better) |
 |-|-:|
+| asm               | – |
 | mfk-0.3.2-O1      | 3459 |
 | mfk-0.3.2-O4      | 3458 |
 | mfk-0.3.2-O4-ill  | 3458 |
@@ -78,7 +81,7 @@ Results:
 | cc65-2.16-unopt   | 30112 |
 | cc65-2.16-opt     | 4003 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:3458|4003&chdl=mfk-0.3.2-O4|cc65-2.16-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,50000&chxr=1,0,5000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1111|3458|4003&chdl=asm|mfk-0.3.2-O4|cc65-2.16-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000&chxl=0:||&chds=0,50000&chxr=1,0,5000)
 
 
 ### Benchmark `fib`
@@ -91,6 +94,7 @@ Results:
 
 | symbol            | frames (less is better) |
 |-|-:|
+| asm               | 1309 |
 | mfk-0.3.2-O1      | 2156 |
 | mfk-0.3.2-O4      | 1476 |
 | mfk-0.3.2-O4-ill  | 1476 |
@@ -99,5 +103,5 @@ Results:
 | cc65-2.16-unopt   | 4647 |
 | cc65-2.16-opt     | 3261 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1476|1784|3261&chdl=mfk-0.3.2-O4|mfk-0.3.2-O4-ss|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,66e266,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1309|1476|1784|3261&chdl=asm|mfk-0.3.2-O4|mfk-0.3.2-O4-ss|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,66e266,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
 

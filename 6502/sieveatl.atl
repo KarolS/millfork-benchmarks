@@ -6,7 +6,6 @@ const SQRT_COUNT = 128
 Sieve:array(COUNT) of byte
 
 round: proc =
-    S: card
     I: card
     J: card
     for ii:0..(COUNT-1)
@@ -16,15 +15,23 @@ round: proc =
         if Sieve(I) = 0
             ;//* Prime number - mark multiples */
             J = I * 2
-            S = J
             while J < COUNT
-                Sieve(S) = 1
-                S = S + I
+                Sieve(J) = 1
                 J = J + I
         I = I + 1
 
 start
+
 round
 round
 round
+round
+round
+
+round
+round
+round
+round
+round
+
 end
