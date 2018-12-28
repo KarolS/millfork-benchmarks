@@ -18,14 +18,14 @@ The result is displayed on the screen as a hexadecimal value. Results below have
 
 These benchmarks compare the Millfork compiler with two popular C compilers for Z80:
 
-|                        | symbol               | compiler | version  | command line                                                                               | comment |
-|------------------------|----------------------|----------|----------|--------------------------------------------------------------------------------------------|-|
-|![](./images/404040.png)| asm                  | Millfork | 0.3.2    | `millfork -t zxspectrum -O1`                                                               | assembly implementation |
-|![](./images/008000.png)| mfk-0.3.2-z80        | Millfork | 0.3.2    | `millfork -t zxspectrum -O1`                                                               | the Z80 backend doesn't differentiate between optimization levels yet |
-|![](./images/44ee44.png)| mfk-0.3.2-8080       | Millfork | 0.3.2    | `millfork -t zxspectrum_8080 -O1`                                                          | the same, but without Z80 extensions |
-|![](./images/dd0000.png)| sccz80-20170112      | SCCZ80   | 20170112 | `zcc +zx -lndos -clib=ansi -O3 -Cc -do-inline -create-app`                                 | optimizations to give it a fighting chance |
-|                        | zsdcc-20170101-unopt | ZSDCC    | 20170101 | `zcc +zx -clib=sdcc_ix -Cs --reserve-regs-iy -create-app`                                  | no optimizations |
-|![](./images/882ed8.png)| zsdcc-20170101-opt   | ZSDCC    | 20170101 | `zcc +zx -clib=sdcc_ix -Cs --reserve-regs-iy -SO3 --max-allocs-per-node200000 --allow-unsafe-read -create-app` | recommended options for good code |
+|                         | symbol               | compiler | version  | command line                                                                               | comment |
+|-------------------------|----------------------|----------|----------|--------------------------------------------------------------------------------------------|-|
+|![](../images/404040.png)| asm                  | Millfork | 0.3.2    | `millfork -t zxspectrum -O1`                                                               | assembly implementation |
+|![](../images/008000.png)| mfk-0.3.2-z80        | Millfork | 0.3.2    | `millfork -t zxspectrum -O1`                                                               | the Z80 backend doesn't differentiate between optimization levels yet |
+|![](../images/44ee44.png)| mfk-0.3.2-8080       | Millfork | 0.3.2    | `millfork -t zxspectrum_8080 -O1`                                                          | the same, but without Z80 extensions |
+|![](../images/dd0000.png)| sccz80-20170112      | SCCZ80   | 20170112 | `zcc +zx -lndos -clib=ansi -O3 -Cc -do-inline -create-app`                                 | optimizations to give it a fighting chance |
+|                         | zsdcc-20170101-unopt | ZSDCC    | 20170101 | `zcc +zx -clib=sdcc_ix -Cs --reserve-regs-iy -create-app`                                  | no optimizations |
+|![](../images/882ed8.png)| zsdcc-20170101-opt   | ZSDCC    | 20170101 | `zcc +zx -clib=sdcc_ix -Cs --reserve-regs-iy -SO3 --max-allocs-per-node200000 --allow-unsafe-read -create-app` | recommended options for good code |
 
 Remarks:
 
@@ -45,14 +45,14 @@ The benchmark calculates all the prime numbers from 1 to 2^(14) using the Sieve 
 
 Results:
 
-|                        | symbol               | frames (less is better) |
-|------------------------|----------------------|-------:|
-|                        | asm                  | –   |
-|![](./images/008000.png)| mfk-0.3.2-z80        | 102 |
-|![](./images/44ee44.png)| mfk-0.3.2-8080       | 124 |
-|![](./images/dd0000.png)| sccz80-20170112      | 695 |
-|                        | zsdcc-20170101-unopt | 115 |
-|![](./images/882ed8.png)| zsdcc-20170101-opt   | 115 |
+|                         | symbol               | frames (less is better) |
+|-------------------------|----------------------|-------:|
+|                         | asm                  | –   |
+|![](../images/008000.png)| mfk-0.3.2-z80        | 102 |
+|![](../images/44ee44.png)| mfk-0.3.2-8080       | 124 |
+|![](../images/dd0000.png)| sccz80-20170112      | 695 |
+|                         | zsdcc-20170101-unopt | 115 |
+|![](../images/882ed8.png)| zsdcc-20170101-opt   | 115 |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:102|124|695|115&chds=0,1000&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,700)
 
@@ -68,14 +68,14 @@ The effect is squished, since each cell is 8×1 pixels instead of 8×8 as in the
 
 Results:
 
-|                        | symbol               | frames (less is better) |
-|------------------------|----------------------|-------:|
-|                        | asm                  | –   |
-|![](./images/008000.png)| mfk-0.3.2-z80        | 485 |
-|![](./images/44ee44.png)| mfk-0.3.2-8080       | 503 |
-|![](./images/dd0000.png)| sccz80-20170112      | 1492 |
-|                        | zsdcc-20170101-unopt | 494 |
-|![](./images/882ed8.png)| zsdcc-20170101-opt   | 492 |
+|                         | symbol               | frames (less is better) |
+|-------------------------|----------------------|-------:|
+|                         | asm                  | –   |
+|![](../images/008000.png)| mfk-0.3.2-z80        | 485 |
+|![](../images/44ee44.png)| mfk-0.3.2-8080       | 503 |
+|![](../images/dd0000.png)| sccz80-20170112      | 1492 |
+|                         | zsdcc-20170101-unopt | 494 |
+|![](../images/882ed8.png)| zsdcc-20170101-opt   | 492 |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:485|503|1492|492&chds=0,1500&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1500)
 
@@ -87,14 +87,14 @@ The benchmark calculates the first 25 Fibonacci numbers using the naïve recursi
 
 Results:
 
-|                        | symbol               | frames (less is better) |
-|------------------------|----------------------|-------:|
-|![](./images/404040.png)| asm                  | 523 |
-|![](./images/008000.png)| mfk-0.3.2-z80        | 551 |
-|![](./images/44ee44.png)| mfk-0.3.2-8080       | 1079 |
-|![](./images/dd0000.png)| sccz80-20170112      | 982 |
-|                        | zsdcc-20170101-unopt | 599 |
-|![](./images/882ed8.png)| zsdcc-20170101-opt   | 599 |
+|                         | symbol               | frames (less is better) |
+|-------------------------|----------------------|-------:|
+|![](../images/404040.png)| asm                  | 523 |
+|![](../images/008000.png)| mfk-0.3.2-z80        | 551 |
+|![](../images/44ee44.png)| mfk-0.3.2-8080       | 1079 |
+|![](../images/dd0000.png)| sccz80-20170112      | 982 |
+|                         | zsdcc-20170101-unopt | 599 |
+|![](../images/882ed8.png)| zsdcc-20170101-opt   | 599 |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:523|551|1079|982|599&chds=0,1100&chdl=asm|mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1100)
 
