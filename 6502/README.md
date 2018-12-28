@@ -18,7 +18,7 @@ The result is displayed on the screen as a hexadecimal value. Results below have
 
 These benchmarks compare the Millfork compiler with the most popular C compiler for 6502, CC65, and with another 6502-oriented language, Atalan:
 
-|                         | symbol            | compiler | version  | command line                                          | comment |
+|&nbsp;&nbsp;&nbsp;&nbsp; | symbol            | compiler | version  | command line                                          | comment |
 |-------------------------|-------------------|----------|----------|-------------------------------------------------------|-|
 |![](../images/404040.png)| asm               | Millfork | 0.3.2    | `millfork -t c64 -O1`                                 | assembly implementation |
 |                         | mfk-0.3.2-O1      | Millfork | 0.3.2    | `millfork -t c64 -O1`                                 | minimal optimization level to not generate dumb code|

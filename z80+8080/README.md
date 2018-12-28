@@ -18,7 +18,7 @@ The result is displayed on the screen as a hexadecimal value. Results below have
 
 These benchmarks compare the Millfork compiler with two popular C compilers for Z80:
 
-|                         | symbol               | compiler | version  | command line                                                                               | comment |
+|&nbsp;&nbsp;&nbsp;&nbsp; | symbol               | compiler | version  | command line                                                                               | comment |
 |-------------------------|----------------------|----------|----------|--------------------------------------------------------------------------------------------|-|
 |![](../images/404040.png)| asm                  | Millfork | 0.3.2    | `millfork -t zxspectrum -O1`                                                               | assembly implementation |
 |![](../images/008000.png)| mfk-0.3.2-z80        | Millfork | 0.3.2    | `millfork -t zxspectrum -O1`                                                               | the Z80 backend doesn't differentiate between optimization levels yet |
