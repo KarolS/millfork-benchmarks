@@ -6,19 +6,16 @@
 unsigned char Sieve[COUNT];
 void round(void) {
     register unsigned char* S;
-    register unsigned       I;
-    register unsigned       J;
+    register unsigned char  I;
     memset(Sieve, 0, COUNT);
     I = 2;
     while (I < SQRT_COUNT) {
         if (Sieve[I] == 0) {
             /* Prime number - mark multiples */
-            J = I<<1;
-            S = &Sieve[J];
-            while (J < COUNT) {
+            S = &Sieve[I<<1];
+            while (S < Sieve + COUNT) {
                 *S = 1;
                 S += I;
-                J += I;
             }
         }
         ++I;

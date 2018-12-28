@@ -8,7 +8,6 @@ void round() align(fast) {
     pointer Z
     pointer S
     word I
-    word J
     for Z,Sieve.addr,paralleluntil,Sieve.addr+COUNT{
         Z[0] = 0
     }
@@ -16,12 +15,10 @@ void round() align(fast) {
     while I < SQRT_COUNT {
         if Sieve[I] == 0 {
             //* Prime number - mark multiples */
-            J = I<<1
-            S = Sieve + J
-            while J < COUNT {
+            S = Sieve + (I<<1)
+            while S < Sieve.addr + COUNT {
                 S[0] = 1
                 S += I
-                J += I
             }
         }
         I += 1

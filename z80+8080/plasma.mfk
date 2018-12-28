@@ -44,9 +44,12 @@ void doplasma () align(fast) {
     c2A += 2
     c2B -= 3
     scrn = SCREEN
-    for ii,0,until,192 {
-        for i,0,until,32 {
-            scrn[0] = blob[(xbuf[i] + ybuf[line_map[ii]]) >> 5]
+    
+    byte j
+    byte jj
+    for jj,0,until,192 {
+        for j,0,until,32 {
+            scrn[0] = blob[(xbuf[j] + ybuf[line_map[jj]]) >> 5]
             scrn += 1
         }
     }

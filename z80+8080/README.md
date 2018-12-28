@@ -48,13 +48,13 @@ Results:
 |                         | symbol               | frames (less is better) |
 |-------------------------|----------------------|-------:|
 |                         | asm                  | –   |
-|![](../images/008000.png)| mfk-0.3.2-z80        | 102 |
-|![](../images/44ee44.png)| mfk-0.3.2-8080       | 124 |
-|![](../images/dd0000.png)| sccz80-20170112      | 695 |
-|                         | zsdcc-20170101-unopt | 115 |
-|![](../images/882ed8.png)| zsdcc-20170101-opt   | 115 |
+|![](../images/008000.png)| mfk-0.3.2-z80        | 71 |
+|![](../images/44ee44.png)| mfk-0.3.2-8080       | 113 |
+|![](../images/dd0000.png)| sccz80-20170112      | 482 |
+|                         | zsdcc-20170101-unopt | 112 |
+|![](../images/882ed8.png)| zsdcc-20170101-opt   | 107 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:102|124|695|115&chds=0,1000&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,700)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:71|113|482|107&chds=0,1000&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,700)
 
 ### Benchmark `plasma`
 
@@ -71,13 +71,13 @@ Results:
 |                         | symbol               | frames (less is better) |
 |-------------------------|----------------------|-------:|
 |                         | asm                  | –   |
-|![](../images/008000.png)| mfk-0.3.2-z80        | 485 |
-|![](../images/44ee44.png)| mfk-0.3.2-8080       | 503 |
+|![](../images/008000.png)| mfk-0.3.2-z80        | 481 |
+|![](../images/44ee44.png)| mfk-0.3.2-8080       | 501 |
 |![](../images/dd0000.png)| sccz80-20170112      | 1492 |
 |                         | zsdcc-20170101-unopt | 494 |
 |![](../images/882ed8.png)| zsdcc-20170101-opt   | 492 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:485|503|1492|492&chds=0,1500&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:481|501|1492|492&chds=0,1500&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1500)
 
 ### Benchmark `fib`
 
