@@ -14,8 +14,6 @@ The result is displayed on the screen as a hexadecimal value. Results below have
 
 ### Compared implementations
 
-# Warning: These benchmark are not actually against Millfork 0.3.2, but against the current development version.
-
 These benchmarks compare the Millfork compiler with two popular C compilers for Z80:
 
 |&nbsp;&nbsp;&nbsp;&nbsp; | symbol               | compiler | version  | command line                                                                               | comment |

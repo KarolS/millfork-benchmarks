@@ -14,8 +14,6 @@ The result is displayed on the screen as a hexadecimal value. Results below have
 
 ### Compared implementations
 
-# Warning: These benchmark are not actually against Millfork 0.3.2, but against the current development version.
-
 These benchmarks compare the Millfork compiler with the most popular C compiler for 6502, CC65, and with another 6502-oriented language, Atalan:
 
 |&nbsp;&nbsp;&nbsp;&nbsp; | symbol            | compiler | version  | command line                                          | comment |
