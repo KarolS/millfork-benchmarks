@@ -18,11 +18,11 @@ These benchmarks compare the Millfork compiler with the most popular C compiler 
 
 |&nbsp;&nbsp;&nbsp;&nbsp; | symbol            | compiler | version  | command line                                          | comment |
 |-------------------------|-------------------|----------|----------|-------------------------------------------------------|-|
-|![](../images/404040.png)| asm               | Millfork | 0.3.2    | `millfork -t c64 -O1`                                 | assembly implementation |
-|                         | mfk-0.3.2-O1      | Millfork | 0.3.2    | `millfork -t c64 -O1`                                 | minimal optimization level to not generate dumb code|
-|![](../images/008000.png)| mfk-0.3.2-O4      | Millfork | 0.3.2    | `millfork -t c64 -O4 -fipo -finline`                  | recommended options for good code |
-|                         | mfk-0.3.2-O4-ill  | Millfork | 0.3.2    | `millfork -t c64 -O4 -fipo -finline -fillegals`       | |
-|![](../images/66e266.png)| mfk-0.3.2-O4-ss   | Millfork | 0.3.2    | `millfork -t c64 -O4 -fipo -finline -fsoftware-stack` | used only for the `fib` benchmark |
+|![](../images/404040.png)| asm               | Millfork | 0.3.4    | `millfork -t c64 -O1`                                 | assembly implementation |
+|                         | mfk-0.3.4-O1      | Millfork | 0.3.4    | `millfork -t c64 -O1`                                 | minimal optimization level to not generate dumb code|
+|![](../images/008000.png)| mfk-0.3.4-O4      | Millfork | 0.3.4    | `millfork -t c64 -O4 -fipo -finline`                  | recommended options for good code |
+|                         | mfk-0.3.4-O4-ill  | Millfork | 0.3.4    | `millfork -t c64 -O4 -fipo -finline -fillegals`       | |
+|![](../images/66e266.png)| mfk-0.3.4-O4-ss   | Millfork | 0.3.4    | `millfork -t c64 -O4 -fipo -finline -fsoftware-stack` | used only for the `fib` benchmark |
 |![](../images/2200aa.png)| atalan-2011       | Atalan   | 20110319 | `atalan -o 9`                                         | |
 |                         | cc65-2.16-unopt   | CC65     | 2.16     | `cl65 -t c64`                                         | no optimizations |
 |![](../images/aa0000.png)| cc65-2.16-opt     | CC65     | 2.16     | `cl65 -t c64 -r -Oirs`                                | recommended options for good code |
@@ -48,15 +48,15 @@ Results:
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
 |![](../images/404040.png)| asm               | 700 |
-|                         | mfk-0.3.2-O1      | 763 |
-|![](../images/008000.png)| mfk-0.3.2-O4      | 701 |
-|                         | mfk-0.3.2-O4-ill  | 702 |
-|                         | mfk-0.3.2-O4-ss   | – |
+|                         | mfk-0.3.4-O1      | 763 |
+|![](../images/008000.png)| mfk-0.3.4-O4      | 701 |
+|                         | mfk-0.3.4-O4-ill  | 702 |
+|                         | mfk-0.3.4-O4-ss   | – |
 |![](../images/2200aa.png)| atalan-2011       | 1375 |
 |                         | cc65-2.16-unopt   | 6331 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 920 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:700|701|920|1375&chdl=asm|mfk-0.3.2-O4|cc65-2.16-opt|atalan-2011&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:700|701|920|1375&chdl=asm|mfk-0.3.4-O4|cc65-2.16-opt|atalan-2011&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
 
 ### Benchmark `plasma`
 
@@ -71,15 +71,15 @@ Results:
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
 |![](../images/404040.png)| asm               | 1754 |
-|                         | mfk-0.3.2-O1      | 1965 |
-|![](../images/008000.png)| mfk-0.3.2-O4      | 1780 |
-|                         | mfk-0.3.2-O4-ill  | 1764 |
-|                         | mfk-0.3.2-O4-ss   | – |
+|                         | mfk-0.3.4-O1      | 1965 |
+|![](../images/008000.png)| mfk-0.3.4-O4      | 1780 |
+|                         | mfk-0.3.4-O4-ill  | 1764 |
+|                         | mfk-0.3.4-O4-ss   | – |
 |                         | atalan-2011       | n/a |
 |                         | cc65-2.16-unopt   | 30112 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 4003 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003&chdl=asm|mfk-0.3.2-O4|cc65-2.16-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000&chxl=0:||&chds=0,50000&chxr=1,0,5000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003&chdl=asm|mfk-0.3.4-O4|cc65-2.16-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000&chxl=0:||&chds=0,50000&chxr=1,0,5000)
 
 
 ### Benchmark `fib`
@@ -93,13 +93,36 @@ Results:
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
 |![](../images/404040.png)| asm               | 1309 |
-|                         | mfk-0.3.2-O1      | 2156 |
-|![](../images/008000.png)| mfk-0.3.2-O4      | 1476 |
-|                         | mfk-0.3.2-O4-ill  | 1476 |
-|![](../images/66e266.png)| mfk-0.3.2-O4-ss   | 1784 |
+|                         | mfk-0.3.4-O1      | 2156 |
+|![](../images/008000.png)| mfk-0.3.4-O4      | 1476 |
+|                         | mfk-0.3.4-O4-ill  | 1476 |
+|![](../images/66e266.png)| mfk-0.3.4-O4-ss   | 1784 |
 |                         | atalan-2011       | n/a |
 |                         | cc65-2.16-unopt   | 4647 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 3261 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1309|1476|1784|3261&chdl=asm|mfk-0.3.2-O4|mfk-0.3.2-O4-ss|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,66e266,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1309|1476|1784|3261&chdl=asm|mfk-0.3.4-O4|mfk-0.3.4-O4-ss|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,66e266,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
+
+
+### Benchmark `linkedlist`
+
+Source: [`linkedlist.c`](./linkedlist.c), [`linkedlist.mfk`](./linkedlist.mfk)
+
+The benchmark creates a single-linked list with 3000 entries, with a 16-bit integer at each node, and then traverses the list and sums all the values together. It does it five times, for more precise results.
+ 
+
+Results:
+
+|                         | symbol            | frames (less is better) |
+|-|-|-:|
+|                         | asm               | n/a |
+|                         | mfk-0.3.4-O1      | 237 |
+|![](../images/008000.png)| mfk-0.3.4-O4      | 219 |
+|                         | mfk-0.3.4-O4-ill  | 215 |
+|                         | mfk-0.3.4-O4-ss   | 219 |
+|                         | atalan-2011       | n/a |
+|                         | cc65-2.16-unopt   | 1401 |
+|![](../images/aa0000.png)| cc65-2.16-opt     | 414 |
+
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:219|414&chdl=mfk-0.3.4-O4|cc65-2.16-opt&chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,500&chxr=1,0,500)
 

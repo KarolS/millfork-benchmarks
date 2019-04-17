@@ -1,0 +1,59 @@
+import benchcommon
+
+struct node {
+    pointer.node next 
+    word value 
+} 
+
+array heap [4000*sizeof(node)] 
+
+word free 
+pointer.node root
+
+void init() {
+    free = 0 
+    root = nullptr 
+}
+
+pointer.node alloc() {
+    word result 
+    result = free 
+    result *= sizeof(node)
+    result += heap.addr
+    free += 1
+    return pointer.node(result)
+}
+
+void prepend(word x) {
+    pointer.node new 
+    new = alloc() 
+    new->next = root 
+    new->value = x 
+    root = new 
+}
+
+word sum() {
+    pointer.node current 
+    word s 
+    s = 0
+    current = root 
+    while current != nullptr {
+        s += current->value 
+        current = current->next 
+    }
+    return s 
+}
+
+void main() {
+    word i
+    byte c
+    start() 
+    for c,0,paralleluntil,5 {
+        init()
+        for i,0,until,3000 {
+            prepend(i) 
+        }
+        putchar(lo(sum()))
+    }
+    end() 
+}

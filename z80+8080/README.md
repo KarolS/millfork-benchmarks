@@ -18,9 +18,9 @@ These benchmarks compare the Millfork compiler with two popular C compilers for 
 
 |&nbsp;&nbsp;&nbsp;&nbsp; | symbol               | compiler | version  | command line                                                                               | comment |
 |-------------------------|----------------------|----------|----------|--------------------------------------------------------------------------------------------|-|
-|![](../images/404040.png)| asm                  | Millfork | 0.3.2    | `millfork -t zxspectrum -O1`                                                               | assembly implementation |
-|![](../images/008000.png)| mfk-0.3.2-z80        | Millfork | 0.3.2    | `millfork -t zxspectrum -O1`                                                               | the Z80 backend doesn't differentiate between optimization levels yet |
-|![](../images/44ee44.png)| mfk-0.3.2-8080       | Millfork | 0.3.2    | `millfork -t zxspectrum_8080 -O1`                                                          | the same, but without Z80 extensions |
+|![](../images/404040.png)| asm                  | Millfork | 0.3.4    | `millfork -t zxspectrum -O1`                                                               | assembly implementation |
+|![](../images/008000.png)| mfk-0.3.4-z80        | Millfork | 0.3.4    | `millfork -t zxspectrum -O1`                                                               | the Z80 backend doesn't differentiate between optimization levels yet |
+|![](../images/44ee44.png)| mfk-0.3.4-8080       | Millfork | 0.3.4    | `millfork -t zxspectrum_8080 -O1`                                                          | the same, but without Z80 extensions |
 |![](../images/dd0000.png)| sccz80-20170112      | SCCZ80   | 20170112 | `zcc +zx -lndos -clib=ansi -O3 -Cc -do-inline -create-app`                                 | optimizations to give it a fighting chance |
 |                         | zsdcc-20170101-unopt | ZSDCC    | 20170101 | `zcc +zx -clib=sdcc_ix -Cs --reserve-regs-iy -create-app`                                  | no optimizations |
 |![](../images/882ed8.png)| zsdcc-20170101-opt   | ZSDCC    | 20170101 | `zcc +zx -clib=sdcc_ix -Cs --reserve-regs-iy -SO3 --max-allocs-per-node200000 --allow-unsafe-read -create-app` | recommended options for good code |
@@ -46,13 +46,13 @@ Results:
 |                         | symbol               | frames (less is better) |
 |-------------------------|----------------------|-------:|
 |                         | asm                  | –   |
-|![](../images/008000.png)| mfk-0.3.2-z80        | 71 |
-|![](../images/44ee44.png)| mfk-0.3.2-8080       | 113 |
+|![](../images/008000.png)| mfk-0.3.4-z80        | 71 |
+|![](../images/44ee44.png)| mfk-0.3.4-8080       | 113 |
 |![](../images/dd0000.png)| sccz80-20170112      | 482 |
 |                         | zsdcc-20170101-unopt | 112 |
 |![](../images/882ed8.png)| zsdcc-20170101-opt   | 107 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:71|113|482|107&chds=0,1000&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,700)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:71|113|482|107&chds=0,1000&chdl=mfk-0.3.4-z80|mfk-0.3.4-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,700)
 
 ### Benchmark `plasma`
 
@@ -69,13 +69,13 @@ Results:
 |                         | symbol               | frames (less is better) |
 |-------------------------|----------------------|-------:|
 |                         | asm                  | –   |
-|![](../images/008000.png)| mfk-0.3.2-z80        | 481 |
-|![](../images/44ee44.png)| mfk-0.3.2-8080       | 501 |
+|![](../images/008000.png)| mfk-0.3.4-z80        | 481 |
+|![](../images/44ee44.png)| mfk-0.3.4-8080       | 501 |
 |![](../images/dd0000.png)| sccz80-20170112      | 1492 |
 |                         | zsdcc-20170101-unopt | 494 |
 |![](../images/882ed8.png)| zsdcc-20170101-opt   | 492 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:481|501|1492|492&chds=0,1500&chdl=mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:481|501|1492|492&chds=0,1500&chdl=mfk-0.3.4-z80|mfk-0.3.4-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1500)
 
 ### Benchmark `fib`
 
@@ -88,11 +88,32 @@ Results:
 |                         | symbol               | frames (less is better) |
 |-------------------------|----------------------|-------:|
 |![](../images/404040.png)| asm                  | 523 |
-|![](../images/008000.png)| mfk-0.3.2-z80        | 551 |
-|![](../images/44ee44.png)| mfk-0.3.2-8080       | 1079 |
+|![](../images/008000.png)| mfk-0.3.4-z80        | 551 |
+|![](../images/44ee44.png)| mfk-0.3.4-8080       | 1079 |
 |![](../images/dd0000.png)| sccz80-20170112      | 982 |
 |                         | zsdcc-20170101-unopt | 599 |
 |![](../images/882ed8.png)| zsdcc-20170101-opt   | 599 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:523|551|1079|982|599&chds=0,1100&chdl=asm|mfk-0.3.2-z80|mfk-0.3.2-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1100)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:523|551|1079|982|599&chds=0,1100&chdl=asm|mfk-0.3.4-z80|mfk-0.3.4-8080|sccz80-20170112|zsdcc-20170101-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,44ee44,dd0000,882ed8&chxl=0:||&chxr=1,0,1100)
 
+
+### Benchmark `linkedlist`
+
+Source: [`linkedlist.c`](./linkedlist.c), [`linkedlist.mfk`](./linkedlist.mfk)
+
+The benchmark creates a single-linked list with 3000 entries, with a 16-bit integer at each node, and then traverses the list and sums all the values together. It does it 25 times, for more precise results.
+
+SCCZ80 failed to compile this benchmark correctly, so its results are not present
+
+Results:
+
+|                         | symbol               | frames (less is better) |
+|-------------------------|----------------------|-------:|
+|                         | asm                  | n/a  |
+|![](../images/008000.png)| mfk-0.3.4-z80        | 548  |
+|![](../images/44ee44.png)| mfk-0.3.4-8080       | 580  |
+|                         | sccz80-20170112      | n/a  |
+|                         | zsdcc-20170101-unopt | 750  |
+|![](../images/882ed8.png)| zsdcc-20170101-opt   | 664  |
+
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:548|580|664&chds=0,1500&chdl=mfk-0.3.4-z80|mfk-0.3.4-8080|zsdcc-20170101-opt&chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,882ed8&chxl=0:||&chxr=1,0,800)
