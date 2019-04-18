@@ -116,7 +116,7 @@ Results:
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
 |                         | asm               | n/a |
-|                         | mfk-0.3.4-O1      | 237 |
+|                         | mfk-0.3.4-O1      | 236 |
 |![](../images/008000.png)| mfk-0.3.4-O4      | 216 |
 |                         | mfk-0.3.4-O4-ill  | 212 |
 |                         | mfk-0.3.4-O4-ss   | 216 |
