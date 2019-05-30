@@ -26,6 +26,8 @@ These benchmarks compare the Millfork compiler with the most popular C compiler 
 |![](../images/2200aa.png)| atalan-2011       | Atalan   | 20110319 | `atalan -o 9`                                         | |
 |                         | cc65-2.16-unopt   | CC65     | 2.16     | `cl65 -t c64`                                         | no optimizations |
 |![](../images/aa0000.png)| cc65-2.16-opt     | CC65     | 2.16     | `cl65 -t c64 -r -Oirs`                                | recommended options for good code |
+|                         | cc65-2.18-unopt   | CC65     | 2.18     | `cl65 -t c64`                                         | no optimizations |
+|                         | cc65-2.18-opt     | CC65     | 2.18     | `cl65 -t c64 -r -Oirs`                                | recommended options for good code |
 
 Remarks:
 
@@ -34,6 +36,8 @@ Remarks:
 * Input and output file options have been omitted for brevity.
 
 * I haven't been able to make Atalan compile benchmarks other than `sieve` without crashing.
+
+* CC65 2.18 is not faster at these benchmarks than CC65 2.16.
 
 * Charts show the most optimized results.
 
@@ -55,6 +59,8 @@ Results:
 |![](../images/2200aa.png)| atalan-2011       | 1375 |
 |                         | cc65-2.16-unopt   | 6331 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 920 |
+|                         | cc65-2.18-unopt   | 6331 |
+|                         | cc65-2.18-opt     | 920 |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:700|701|920|1375&chdl=asm|mfk-0.3.4-O4|cc65-2.16-opt|atalan-2011&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
 
@@ -78,6 +84,10 @@ Results:
 |                         | atalan-2011       | n/a |
 |                         | cc65-2.16-unopt   | 30112 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 4003 |
+|                         | cc65-2.18-unopt   | 30112 |
+|                         | cc65-2.18-opt     | 4030 |
+
+_Note: CC65 2.16 and CC65 2.18 generate the exact same code. The speed differences are probably due to linking layout differences._
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003&chdl=asm|mfk-0.3.4-O4|cc65-2.16-opt&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000&chxl=0:||&chds=0,50000&chxr=1,0,5000)
 
@@ -100,6 +110,8 @@ Results:
 |                         | atalan-2011       | n/a |
 |                         | cc65-2.16-unopt   | 4647 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 3261 |
+|                         | cc65-2.18-unopt   | 4647 |
+|                         | cc65-2.18-opt     | 3261 |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1309|1476|1784|3261&chdl=asm|mfk-0.3.4-O4|mfk-0.3.4-O4-ss|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,66e266,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
 
@@ -123,6 +135,8 @@ Results:
 |                         | atalan-2011       | n/a |
 |                         | cc65-2.16-unopt   | 1401 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 414 |
+|                         | cc65-2.18-unopt   | 1401 |
+|                         | cc65-2.18-opt     | 414 |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:216|414&chdl=mfk-0.3.4-O4|cc65-2.16-opt&chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,500&chxr=1,0,500)
 
