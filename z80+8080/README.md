@@ -122,3 +122,26 @@ Results:
 |![](../images/882ed8.png)| zsdcc-20170101-opt   | 664  |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:548|482|580|664&chds=0,1500&chdl=mfk-0.3.4-z80|mfk-0.3.4-z80-o4|mfk-0.3.4-8080|zsdcc-20170101-opt&chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,00aa44,44ee44,882ed8&chxl=0:||&chxr=1,0,800)
+
+
+### Benchmark `romsum`
+
+Source: [`romsum.c`](./romsum.c), [`romsum.mfk`](./romsum.mfk)
+
+The benchmark sums all the bytes in the ROM and prints their sum (as a 16-bit integer). The benchmark is repeated 6 times, for more precise results.
+
+SCCZ80 failed to compile this benchmark, so its results are not present.
+
+Results:
+
+|                         | symbol               | frames (less is better) |
+|-------------------------|----------------------|-------:|
+|                         | asm                  | n/a  |
+|![](../images/008000.png)| mfk-0.3.4-z80        | 493  |
+|                         | mfk-0.3.4-z80-o4     | 493  |
+|![](../images/44ee44.png)| mfk-0.3.4-8080       | 749  |
+|                         | sccz80-20170112      | n/a  |
+|                         | zsdcc-20170101-unopt | 451  |
+|![](../images/882ed8.png)| zsdcc-20170101-opt   | 451  |
+
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:493|749|451&chds=0,1100&chdl=mfk-0.3.4-z80|mfk-0.3.4-8080|zsdcc-20170101-opt&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,882ed8&chxl=0:||&chxr=1,0,1100)
