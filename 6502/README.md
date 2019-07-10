@@ -28,6 +28,7 @@ These benchmarks compare the Millfork compiler with the most popular C compiler 
 |![](../images/aa0000.png)| cc65-2.16-opt     | CC65     | 2.16     | `cl65 -t c64 -r -Oirs`                                | recommended options for good code |
 |                         | cc65-2.18-unopt   | CC65     | 2.18     | `cl65 -t c64`                                         | no optimizations |
 |                         | cc65-2.18-opt     | CC65     | 2.18     | `cl65 -t c64 -r -Oirs`                                | recommended options for good code |
+|                         | prog8-1.9         | Prog8    | 1.9      |                                                       | |
 
 Remarks:
 
@@ -37,13 +38,17 @@ Remarks:
 
 * I haven't been able to make Atalan compile benchmarks other than `sieve` without crashing.
 
+* Language limitations make it very hard, if not impossible, to implement `fib` and `linkedlist` in Prog8.
+
+* Due to bugs in Prog8, instead of calculating the time, start timestamp and end timestamp are displayed.
+
 * CC65 2.18 is not faster at these benchmarks than CC65 2.16.
 
 * Charts show the most optimized results.
 
 ### Benchmark `sieve`
 
-Source: [`sieve.c`](./sieve.c), [`sieve.mfk`](./sieve.mfk), [`sieve-asm.mfk`](./sieve-asm.mfk), [`sieveatl.atl`](./sieveatl.atl)
+Source: [`sieve.c`](./sieve.c), [`sieve.mfk`](./sieve.mfk), [`sieve-asm.mfk`](./sieve-asm.mfk), [`sieveatl.atl`](./sieveatl.atl), [`sieve-p8.p8`](./sieve-p8.p8)
 
 The benchmark calculates all the prime numbers from 1 to 2^(14) using the Sieve of Erasthotenes algorithm. It does it ten times, for more precise results.
 
@@ -61,6 +66,7 @@ Results:
 |![](../images/aa0000.png)| cc65-2.16-opt     | 920 |
 |                         | cc65-2.18-unopt   | 6331 |
 |                         | cc65-2.18-opt     | 920 |
+|                         | prog8-1.9         | 5119 |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:700|701|920|1375&chdl=asm|mfk-0.3.4-O4|cc65-2.16-opt|atalan-2011&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
 
@@ -86,6 +92,7 @@ Results:
 |![](../images/aa0000.png)| cc65-2.16-opt     | 4003 |
 |                         | cc65-2.18-unopt   | 30112 |
 |                         | cc65-2.18-opt     | 4030 |
+|                         | prog8-1.9         | n/a |
 
 _Note: CC65 2.16 and CC65 2.18 generate the exact same code. The speed differences are probably due to linking layout differences._
 
@@ -112,6 +119,7 @@ Results:
 |![](../images/aa0000.png)| cc65-2.16-opt     | 3261 |
 |                         | cc65-2.18-unopt   | 4647 |
 |                         | cc65-2.18-opt     | 3261 |
+|                         | prog8-1.9         | n/a |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1309|1476|1784|3261&chdl=asm|mfk-0.3.4-O4|mfk-0.3.4-O4-ss|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,66e266,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
 
@@ -137,13 +145,14 @@ Results:
 |![](../images/aa0000.png)| cc65-2.16-opt     | 414 |
 |                         | cc65-2.18-unopt   | 1401 |
 |                         | cc65-2.18-opt     | 414 |
+|                         | prog8-1.9         | n/a |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:216|414&chdl=mfk-0.3.4-O4|cc65-2.16-opt&chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,500&chxr=1,0,500)
 
 
 ### Benchmark `romsum`
 
-Source: [`romsum.c`](./romsum.c), [`romsum.mfk`](./romsum.mfk)
+Source: [`romsum.c`](./romsum.c), [`romsum.mfk`](./romsum.mfk), [`romsum-p8.p8`](./romsum-p8.p8)
 
 The benchmark sums all the bytes in the Kernal ROM and prints their sum (as a 16-bit integer). The benchmark is repeated 6 times, for more precise results.
 
@@ -161,5 +170,6 @@ Results:
 |![](../images/aa0000.png)| cc65-2.16-opt     | 169  |
 |                         | cc65-2.18-unopt   | 1141 |
 |                         | cc65-2.18-opt     | 169  |
+|                         | prog8-1.9         | 641  |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:88|169&chdl=mfk-0.3.4-O4|cc65-2.16-opt&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,500&chxr=1,0,200)
