@@ -36,7 +36,7 @@ Remarks:
 
 * Input and output file options have been omitted for brevity.
 
-* I haven't been able to make Atalan compile benchmarks other than `sieve` without crashing.
+* I haven't been able to make Atalan compile benchmarks other than `sieve` and `romsum` without crashing.
 
 * Language limitations make it very hard, if not impossible, to implement `fib` and `linkedlist` in Prog8.
 
@@ -152,7 +152,7 @@ Results:
 
 ### Benchmark `romsum`
 
-Source: [`romsum.c`](./romsum.c), [`romsum.mfk`](./romsum.mfk), [`romsum-p8.p8`](./romsum-p8.p8)
+Source: [`romsum.c`](./romsum.c), [`romsum.mfk`](./romsum.mfk), [`romsum-asm.mfk`](./romsum-asm.mfk), [`romsum-atl.atl`](./romsum-atl.atl), [`romsum-p8.p8`](./romsum-p8.p8)
 
 The benchmark sums all the bytes in the Kernal ROM and prints their sum (as a 16-bit integer). The benchmark is repeated 6 times, for more precise results.
 
@@ -160,16 +160,16 @@ Results:
 
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
-|                         | asm               | n/a  |
+|![](../images/404040.png)| asm               | 51  |
 |                         | mfk-0.3.4-O1      | 97   |
 |![](../images/008000.png)| mfk-0.3.4-O4      | 88   |
 |                         | mfk-0.3.4-O4-ill  | 88   |
 |                         | mfk-0.3.4-O4-ss   | n/a  |
-|                         | atalan-2011       | n/a  |
+|![](../images/2200aa.png)| atalan-2011       | 96  |
 |                         | cc65-2.16-unopt   | 1141 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 169  |
 |                         | cc65-2.18-unopt   | 1141 |
 |                         | cc65-2.18-opt     | 169  |
 |                         | prog8-1.9         | 641  |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:88|169&chdl=mfk-0.3.4-O4|cc65-2.16-opt&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000&chxl=0:||&chds=0,500&chxr=1,0,200)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:51|88|169|96&chdl=asm|mfk-0.3.4-O4|cc65-2.16-opt|atalan-2011&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,2200aa&chxl=0:||&chds=0,500&chxr=1,0,200)

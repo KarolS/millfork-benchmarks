@@ -1,0 +1,41 @@
+import benchcommon
+import stdio
+
+const pointer rom = $e000
+
+word sum() align(fast) {
+    byte page
+    pointer p
+    asm {
+        lda #$20
+        sta page
+        lda #$e0
+        sta p+1
+        lda #0
+        sta p
+        tax
+        tay
+    __sum_loop:
+        clc
+        adc (p),y
+        bcc __sum_cc
+        inx
+    __sum_cc:
+        dey
+        bne __sum_loop 
+        inc p+1
+        dec page
+        bne __sum_loop
+        rts
+    }
+}
+
+void main (){
+    byte i
+    start()
+    for i,0,until,6 {
+        putword(sum())
+        new_line()
+    }
+    end()
+}

@@ -1,0 +1,44 @@
+use c64
+use benchcommon
+
+s: card
+    
+sum: proc =
+    tmp: byte
+    p: adr
+    s = 0
+    p = $e000
+    
+    for page:0..$1f
+        for i:0..$ff
+            tmp = p(i)
+            s = s + tmp
+        ; assigning to pointers automatically takes an address, so this is the only way you can do pointer arithmetic in Atalan
+        p = p($100)
+
+
+
+prints: proc = 
+	putchar hi_nibble_to_hex hi s
+	putchar lo_nibble_to_hex hi s
+	putchar hi_nibble_to_hex lo s
+	putchar lo_nibble_to_hex lo s
+	putchar 13
+    
+start
+
+;unrolled instead of loop, as loops are broken
+sum
+prints
+sum
+prints
+sum
+prints
+sum
+prints
+sum
+prints
+sum
+prints
+
+end
