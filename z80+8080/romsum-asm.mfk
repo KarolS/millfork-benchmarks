@@ -1,0 +1,30 @@
+import benchcommon
+import stdio
+
+const pointer rom = 0
+
+asm word sum() align(fast) {
+    ld d,0
+    ld hl,$4000
+ __sum_loop:
+    add a,(hl)
+    jp nc, __sum_cc
+    inc d
+ __sum_cc:
+    dec hl
+    bit 7,h
+    jp z,__sum_loop
+    ld l,a
+    ld h,d
+    ret
+}
+
+void main (){
+    byte i
+    start()
+    for i,0,until,20 {
+        putword(sum())
+        new_line()
+    }
+    end()
+}

@@ -136,7 +136,7 @@ Results:
 
 |                         | symbol               | frames (less is better) |
 |-------------------------|----------------------|-------:|
-|                         | asm                  | n/a  |
+|![](../images/404040.png)| asm                  | 207  |
 |![](../images/008000.png)| mfk-0.3.4-z80        | 493  |
 |                         | mfk-0.3.4-z80-o4     | 493  |
 |![](../images/44ee44.png)| mfk-0.3.4-8080       | 749  |
@@ -144,4 +144,4 @@ Results:
 |                         | zsdcc-20170101-unopt | 451  |
 |![](../images/882ed8.png)| zsdcc-20170101-opt   | 451  |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:493|749|451&chds=0,1100&chdl=mfk-0.3.4-z80|mfk-0.3.4-8080|zsdcc-20170101-opt&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,44ee44,882ed8&chxl=0:||&chxr=1,0,1100)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:207|493|749|451&chds=0,1100&chdl=asm|mfk-0.3.4-z80|mfk-0.3.4-8080|zsdcc-20170101-opt&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,44ee44,882ed8&chxl=0:||&chxr=1,0,1100)
