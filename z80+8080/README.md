@@ -126,7 +126,7 @@ Results:
 
 ### Benchmark `romsum`
 
-Source: [`romsum.c`](./romsum.c), [`romsum.mfk`](./romsum.mfk)
+Source: [`romsum.c`](./romsum.c), [`romsum.mfk`](./romsum.mfk), [`romsum-asm.mfk`](./romsum-asm.mfk)
 
 The benchmark sums all the bytes in the ROM and prints their sum (as a 16-bit integer). The benchmark is repeated 6 times, for more precise results.
 
