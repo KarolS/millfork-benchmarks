@@ -78,7 +78,7 @@ Results:
 
 ### Benchmark `plasma`
 
-Source: [`plasma.c`](./plasma.c), [`plasma.mfk`](./plasma.mfk)
+Source: [`plasma.c`](./plasma.c), [`plasma.mfk`](./plasma.mfk), [`plasma-kc.kc`](./plasma-kc.kc)
 
 The benchmark displays a plasma demo effect. 1000 frames are rendered.
 
