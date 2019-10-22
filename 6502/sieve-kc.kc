@@ -1,0 +1,47 @@
+import "print"
+import "benchcommon"
+
+const unsigned int COUNT = 16384;
+const byte SQRT_COUNT = 128;
+
+byte[COUNT] Sieve;
+
+void round(void) {
+    register byte* S;
+    register byte  I;
+    memset(Sieve, 0, COUNT);
+    I = 2;
+    while (I < SQRT_COUNT) {
+        if (Sieve[I] == 0) {
+            /* Prime number - mark multiples */
+            S = &Sieve[I<<1];
+            while (S < Sieve + COUNT) {
+                *S = 1;
+                S += I;
+            }
+        }
+        ++I;
+    }
+}
+
+int main (void)
+{
+    start();
+    
+    round();
+    round();
+    round();
+    round();
+    round();
+    
+    round();
+    round();
+    round();
+    round();
+    round();
+    
+    end();
+    return 0;
+}
+
+

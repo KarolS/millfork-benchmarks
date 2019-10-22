@@ -1,6 +1,6 @@
 %import c64utils
 
-~ main {
+main {
 
     const uword COUNT = 16384
     const uword SQRT_COUNT = 128
@@ -47,7 +47,7 @@
 
 
 
-~ benchcommon {
+benchcommon {
     ubyte last_time0 = 0
     ubyte last_time1 = 0
     ubyte last_time2 = 0

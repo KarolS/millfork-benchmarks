@@ -1,0 +1,70 @@
+import "benchcommon"
+
+struct node {
+    struct node* next;
+    unsigned int value;
+};
+
+struct node [4000] heap;
+
+unsigned int free_;
+struct node* root;
+
+void init(void) {
+    free_ = 0;
+    root = 0;
+}
+
+struct node* alloc() {
+    struct node* result;
+    result = heap + free_;
+    free_++;
+    return result;
+}
+
+void prepend(unsigned int x) {
+    struct node* new;
+    new = alloc();
+    
+    // ugly hack:
+    
+    unsigned int* new_next_ptr;
+    new_next_ptr = (unsigned int*)(0+(word)new);
+    *new_next_ptr = (unsigned int)root;
+    
+    unsigned int* new_value_ptr;
+    new_value_ptr = (unsigned int*)(2+(word)new);    
+    *new_value_ptr = x;
+    
+    root = new;
+}
+
+unsigned int sum(void) {
+    struct node* current;
+    unsigned int s;
+    unsigned int tmp;
+    s = 0;
+    current = root;
+    while (current) {
+        // ugly hack:
+        tmp = *(unsigned int*)(2+(word)current);
+        s += tmp;
+        current = *(struct node**)current;
+    }
+    return s;
+}
+
+int main(void) {
+    unsigned int i;
+    unsigned char c;
+    start();
+    for(c = 0; c < 5; c++) {
+        init();
+        for(i = 0; i < 3000; i++) {
+            prepend(i);
+        }
+        print_char((byte)sum());
+    }
+    end();
+    return 0;
+}

@@ -1,14 +1,16 @@
 %import c64utils
 
-~ main {
+main {
 
     const uword rom = $e000
     
     sub sumrom() -> uword {
         uword p = rom
         uword s = 0
-        for ubyte page in 0 to $1f {
-            for ubyte i in 0 to $ff {
+        ubyte page
+        ubyte i
+        for page in 0 to $1f {
+            for i in 0 to $ff {
                 s += @(p+i)
             }
             p += $100
@@ -18,7 +20,8 @@
     
     sub start() {
         benchcommon.begin()
-        for ubyte i in 0 to 5 {
+        ubyte i
+        for i in 0 to 5 {
             c64scr.print_uw(sumrom())
             c64.CHROUT('\n')
         }
@@ -27,7 +30,7 @@
 }
 
 
-~ benchcommon {
+benchcommon {
     ubyte last_time0 = 0
     ubyte last_time1 = 0
     ubyte last_time2 = 0
