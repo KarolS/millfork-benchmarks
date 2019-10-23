@@ -61,9 +61,9 @@ Results:
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
 |![](../images/404040.png)| asm               | 700 |
-|                         | mfk-0.3.10-O1     | 763 |
+|                         | mfk-0.3.10-O1     | 762 |
 |![](../images/008000.png)| mfk-0.3.10-O4     | 701 |
-|                         | mfk-0.3.10-O4-ill | 702 |
+|                         | mfk-0.3.10-O4-ill | 701 |
 |                         | mfk-0.3.10-O4-ss  | – |
 |![](../images/2200aa.png)| atalan-2011       | 1375 |
 |                         | cc65-2.16-unopt   | 6331 |
@@ -89,7 +89,7 @@ Results:
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
 |![](../images/404040.png)| asm               | 1754 |
-|                         | mfk-0.3.10-O1     | 1965 |
+|                         | mfk-0.3.10-O1     | 1954 |
 |![](../images/008000.png)| mfk-0.3.10-O4     | 1780 |
 |                         | mfk-0.3.10-O4-ill | 1764 |
 |                         | mfk-0.3.10-O4-ss  | – |
@@ -127,7 +127,7 @@ Results:
 |                         | mfk-0.3.10-O1     | 2156 |
 |![](../images/008000.png)| mfk-0.3.10-O4     | 1476 |
 |                         | mfk-0.3.10-O4-ill | 1476 |
-|![](../images/66e266.png)| mfk-0.3.10-O4-ss  | 1784 |
+|![](../images/66e266.png)| mfk-0.3.10-O4-ss  | 1783 |
 |                         | atalan-2011       | n/a |
 |                         | cc65-2.16-unopt   | 4647 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 3261 |
