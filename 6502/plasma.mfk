@@ -95,7 +95,7 @@ void main (){
     cia2_pra = (block & 0xFC) | (lo(SCREEN1 >> 14) ^ 0x03)
     v = vic_mem
 
-    while false && count != 0 {
+    while count != 0 {
         doplasma(SCREEN1)
         vic_mem = PAGE1
         doplasma(SCREEN2)
