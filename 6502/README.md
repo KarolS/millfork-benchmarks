@@ -99,18 +99,16 @@ Results:
 |                         | cc65-2.18-unopt   | 30112 |
 |                         | cc65-2.18-opt     | 4030 |
 |                         | prog8-1.62        | n/a |
-|![](../images/ff7f27.png)| kickc-0.7.11      | 1990 |
+|![](../images/ff7f27.png)| kickc-0.7.11      | 1995 |
 |                         | basic-boss        | n/a |
 
 _Notes:_
 
 * _CC65 2.16 and CC65 2.18 generate the exact same code. The speed differences are probably due to linking layout differences._
 
-* _For some unknown reason, KickC program does not generate any video output._
 
 
-
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003|1990&chdl=asm|mfk-0.3.10-O4|cc65-2.16-opt|kickc-0.7.11&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,ff7f27&chxl=0:||&chds=0,50000&chxr=1,0,5000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003|1995&chdl=asm|mfk-0.3.10-O4|cc65-2.16-opt|kickc-0.7.11&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,ff7f27&chxl=0:||&chds=0,50000&chxr=1,0,5000)
 
 
 ### Benchmark `fib`

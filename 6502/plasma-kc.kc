@@ -46,12 +46,12 @@ const byte [0x100] align($100) sinustable = {
 byte[40] xbuf;
 byte[25] ybuf;
 
+byte c1A,c1B;
+byte c2A,c2B;
 void doplasma (byte* scrn)
 {
     byte c1a,c1b;
     byte c2a,c2b;
-    byte c1A,c1B;
-    byte c2A,c2B;
     byte i, ii;
     byte j, jj;
 
@@ -91,6 +91,7 @@ void makechar (void)
 { 
     byte i, ii, b, s;
     unsigned int c;
+    rand_seed = 6474;
 
     for (c = 0; c < 0x100; ++c) {
         s = sinustable[(byte)c];

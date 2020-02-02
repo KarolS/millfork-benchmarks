@@ -52,8 +52,8 @@ static void doplasma (register unsigned char* scrn)
 {
     unsigned char c1a,c1b;
     unsigned char c2a,c2b;
-    unsigned char c1A,c1B;
-    unsigned char c2A,c2B;
+    static unsigned char c1A,c1B;
+    static unsigned char c2A,c2B;
     unsigned char i, ii;
     unsigned char j, jj;
 
