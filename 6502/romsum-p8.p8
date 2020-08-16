@@ -59,14 +59,14 @@ benchcommon {
     sub end() {
         benchcommon.read_time()
         
-        c64scr.print_ubhex(0, benchcommon.time_start2)
-        c64scr.print_ubhex(0, benchcommon.time_start1)
-        c64scr.print_ubhex(0, benchcommon.time_start0)
+        c64scr.print_ubhex(benchcommon.time_start2, false)
+        c64scr.print_ubhex(benchcommon.time_start1, false)
+        c64scr.print_ubhex(benchcommon.time_start0, false)
         c64.CHROUT('\n')
         
-        c64scr.print_ubhex(0, benchcommon.last_time2)
-        c64scr.print_ubhex(0, benchcommon.last_time1)
-        c64scr.print_ubhex(0, benchcommon.last_time0)
+        c64scr.print_ubhex(benchcommon.last_time2, false)
+        c64scr.print_ubhex(benchcommon.last_time1, false)
+        c64scr.print_ubhex(benchcommon.last_time0, false)
         c64.CHROUT('\n')
         
         c64scr.input_chars($c000)
