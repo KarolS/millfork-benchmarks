@@ -68,7 +68,7 @@ benchcommon {
         c64scr.print_ubhex(benchcommon.last_time0, false)
         c64.CHROUT('\n')
 
-        c64scr.input_chars($c000)
+        void c64scr.input_chars($c000)
     }
 }
 

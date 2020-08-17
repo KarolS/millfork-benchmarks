@@ -7,7 +7,6 @@ main {
     const uword Sieve = $4000
 
     sub sieve_round() {
-        uword Z
         uword S
         ubyte I = 2
         memset(Sieve, COUNT, 0)
@@ -83,7 +82,7 @@ benchcommon {
         c64scr.print_ubhex(benchcommon.last_time0, false)
         c64.CHROUT('\n')
 
-        c64scr.input_chars($c000)
+        void c64scr.input_chars($c000)
     }
 }
 
