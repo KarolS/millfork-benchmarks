@@ -112,8 +112,6 @@ _Notes:_
 
 * _CC65 2.16 and CC65 2.18 generate the exact same code. The speed differences are probably due to linking layout differences._
 
-* There's a performance regression in this benchmark in Millfork 0.3.18.
-
 
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003|2505|1994&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27&chxl=0:||&chds=0,50000&chxr=1,0,5000)
