@@ -18,18 +18,20 @@ These benchmarks compare the Millfork compiler with the most popular C compiler 
 
 |&nbsp;&nbsp;&nbsp;&nbsp; | symbol            | compiler | version  | command line                                          | comment |
 |-------------------------|-------------------|----------|----------|-------------------------------------------------------|-|
-|![](../images/404040.png)| asm               | Millfork | 0.3.10   | `millfork -t c64 -O1`                                 | assembly implementation |
-|                         | mfk-0.3.10-O1     | Millfork | 0.3.10   | `millfork -t c64 -O1`                                 | minimal optimization level to not generate dumb code|
-|![](../images/008000.png)| mfk-0.3.10-O4     | Millfork | 0.3.10   | `millfork -t c64 -O4 -fipo -finline`                  | recommended options for good code |
-|                         | mfk-0.3.10-O4-ill | Millfork | 0.3.10   | `millfork -t c64 -O4 -fipo -finline -fillegals`       | |
-|![](../images/66e266.png)| mfk-0.3.10-O4-ss  | Millfork | 0.3.10   | `millfork -t c64 -O4 -fipo -finline -fsoftware-stack` | used only for the `fib` benchmark |
+|![](../images/404040.png)| asm               | Millfork | 0.3.18   | `millfork -t c64 -O1`                                 | assembly implementation |
+|                         | mfk-0.3.18-O1     | Millfork | 0.3.18   | `millfork -t c64 -O1`                                 | minimal optimization level to not generate dumb code|
+|![](../images/008000.png)| mfk-0.3.18-O4     | Millfork | 0.3.18   | `millfork -t c64 -O4 -fipo -finline`                  | recommended options for good code |
+|                         | mfk-0.3.18-O4-ill | Millfork | 0.3.18   | `millfork -t c64 -O4 -fipo -finline -fillegals`       | |
+|![](../images/66e266.png)| mfk-0.3.18-O4-ss  | Millfork | 0.3.18   | `millfork -t c64 -O4 -fipo -finline -fsoftware-stack` | used only for the `fib` benchmark |
 |![](../images/2200aa.png)| atalan-2011       | Atalan   | 20110319 | `atalan -o 9`                                         | |
 |                         | cc65-2.16-unopt   | CC65     | 2.16     | `cl65 -t c64`                                         | no optimizations |
 |![](../images/aa0000.png)| cc65-2.16-opt     | CC65     | 2.16     | `cl65 -t c64 -r -Oirs`                                | recommended options for good code |
 |                         | cc65-2.18-unopt   | CC65     | 2.18     | `cl65 -t c64`                                         | no optimizations |
 |                         | cc65-2.18-opt     | CC65     | 2.18     | `cl65 -t c64 -r -Oirs`                                | recommended options for good code |
-|                         | prog8-1.62        | Prog8    | 1.62     |                                                       | |
-|![](../images/ff7f27.png)| kickc-0.7.11      | KickC    | 0.7.11   |                                                       | | 
+|                         | vbcc-0.9h-unopt   | VBCC     | 0.9h     | `vc`                                                  | no optimizations |
+|![](../images/96c1ee.png)| vbcc-0.9h-opt     | VBCC     | 0.9h     | `vc -O3`                                              | recommended options for good code |
+|                         | prog8-3.0         | Prog8    | 3.0      |                                                       | |
+|![](../images/ff7f27.png)| kickc-0.8.2       | KickC    | 0.8.2    |                                                       | | 
 |                         | basic-boss        | BASIC-BOSS | 2.40   |                                                       | |
 
 Remarks:
@@ -60,21 +62,23 @@ Results:
 
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
-|![](../images/404040.png)| asm               | 700 |
-|                         | mfk-0.3.10-O1     | 762 |
-|![](../images/008000.png)| mfk-0.3.10-O4     | 701 |
-|                         | mfk-0.3.10-O4-ill | 701 |
-|                         | mfk-0.3.10-O4-ss  | – |
+|![](../images/404040.png)| asm               | 701 |
+|                         | mfk-0.3.18-O1     | 762 |
+|![](../images/008000.png)| mfk-0.3.18-O4     | 701 |
+|                         | mfk-0.3.18-O4-ill | 701 |
+|                         | mfk-0.3.18-O4-ss  | – |
 |![](../images/2200aa.png)| atalan-2011       | 1375 |
 |                         | cc65-2.16-unopt   | 6331 |
-|![](../images/aa0000.png)| cc65-2.16-opt     | 920 |
+|![](../images/aa0000.png)| cc65-2.16-opt     | 919 |
 |                         | cc65-2.18-unopt   | 6331 |
-|                         | cc65-2.18-opt     | 920 |
-|                         | prog8-1.62        | 4335 |
-|![](../images/ff7f27.png)| kickc-0.7.11      | 995 |
+|                         | cc65-2.18-opt     | 919 |
+|                         | vbcc-0.9h-unopt   | 992 |
+|![](../images/96c1ee.png)| vbcc-0.9h-opt     | 992 |
+|                         | prog8-3.0         | 4212 |
+|![](../images/ff7f27.png)| kickc-0.8.2       | 992 |
 |                         | basic-boss        | 2406 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:700|701|920|995|1375&chdl=asm|mfk-0.3.10-O4|cc65-2.16-opt|kickc-0.7.11|atalan-2011&chtt=Sieve%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,ff7f27,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:701|701|919|992|992|1375&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.2|atalan-2011&chtt=Sieve%20benchmark%20%28time%20in%20frames,%20less%20is%20better%29&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
 
 ### Benchmark `plasma`
 
@@ -89,26 +93,30 @@ Results:
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
 |![](../images/404040.png)| asm               | 1754 |
-|                         | mfk-0.3.10-O1     | 1954 |
-|![](../images/008000.png)| mfk-0.3.10-O4     | 1780 |
-|                         | mfk-0.3.10-O4-ill | 1764 |
-|                         | mfk-0.3.10-O4-ss  | – |
+|                         | mfk-0.3.18-O1     | 1920 |
+|![](../images/008000.png)| mfk-0.3.18-O4     | 1780 |
+|                         | mfk-0.3.18-O4-ill | 1764 |
+|                         | mfk-0.3.18-O4-ss  | – |
 |                         | atalan-2011       | n/a |
 |                         | cc65-2.16-unopt   | 30112 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 4003 |
 |                         | cc65-2.18-unopt   | 30112 |
 |                         | cc65-2.18-opt     | 4030 |
-|                         | prog8-1.62        | n/a |
-|![](../images/ff7f27.png)| kickc-0.7.11      | 1995 |
+|                         | vbcc-0.9h-unopt   | 3315 |
+|![](../images/96c1ee.png)| vbcc-0.9h-opt     | 2505 |
+|                         | prog8-3.0         | n/a |
+|![](../images/ff7f27.png)| kickc-0.8.2       | 1994 |
 |                         | basic-boss        | n/a |
 
 _Notes:_
 
 * _CC65 2.16 and CC65 2.18 generate the exact same code. The speed differences are probably due to linking layout differences._
 
+* There's a performance regression in this benchmark in Millfork 0.3.18.
 
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003|1995&chdl=asm|mfk-0.3.10-O4|cc65-2.16-opt|kickc-0.7.11&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,ff7f27&chxl=0:||&chds=0,50000&chxr=1,0,5000)
+
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003|2505|1994&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27&chxl=0:||&chds=0,50000&chxr=1,0,5000)
 
 
 ### Benchmark `fib`
@@ -122,20 +130,22 @@ Results:
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
 |![](../images/404040.png)| asm               | 1309 |
-|                         | mfk-0.3.10-O1     | 2156 |
-|![](../images/008000.png)| mfk-0.3.10-O4     | 1476 |
-|                         | mfk-0.3.10-O4-ill | 1476 |
-|![](../images/66e266.png)| mfk-0.3.10-O4-ss  | 1783 |
+|                         | mfk-0.3.18-O1     | 2156 |
+|![](../images/008000.png)| mfk-0.3.18-O4     | 1476 |
+|                         | mfk-0.3.18-O4-ill | 1476 |
+|![](../images/66e266.png)| mfk-0.3.18-O4-ss  | 1783 |
 |                         | atalan-2011       | n/a |
 |                         | cc65-2.16-unopt   | 4647 |
 |![](../images/aa0000.png)| cc65-2.16-opt     | 3261 |
 |                         | cc65-2.18-unopt   | 4647 |
 |                         | cc65-2.18-opt     | 3261 |
-|                         | prog8-1.62        | n/a |
-|                         | kickc-0.7.11      | n/a |
+|                         | vbcc-0.9h-unopt   | 2915 |
+|![](../images/96c1ee.png)| vbcc-0.9h-opt     | 2401 |
+|                         | prog8-3.0         | n/a |
+|                         | kickc-0.8.2       | n/a |
 |                         | basic-boss        | n/a |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1309|1476|1784|3261&chdl=asm|mfk-0.3.10-O4|mfk-0.3.10-O4-ss|cc65-2.16-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,66e266,aa0000&chxl=0:||&chds=0,4000&chxr=1,0,4000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1309|1476|1783|3261|2401&chdl=asm|mfk-0.3.18-O4|mfk-0.3.18-O4-ss|cc65-2.16-opt|vbcc-0.9h-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,66e266,aa0000,96c1ee&chxl=0:||&chds=0,4000&chxr=1,0,4000)
 
 
 ### Benchmark `linkedlist`
@@ -150,21 +160,26 @@ Results:
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
 |                         | asm               | n/a |
-|                         | mfk-0.3.10-O1     | 236 |
-|![](../images/008000.png)| mfk-0.3.10-O4     | 216 |
-|                         | mfk-0.3.10-O4-ill | 212 |
-|                         | mfk-0.3.10-O4-ss  | 216 |
+|                         | mfk-0.3.18-O1     | 236 |
+|![](../images/008000.png)| mfk-0.3.18-O4     | 215 |
+|                         | mfk-0.3.18-O4-ill | 212 |
+|                         | mfk-0.3.18-O4-ss  | 216 |
 |                         | atalan-2011       | n/a |
-|                         | cc65-2.16-unopt   | 1401 |
-|![](../images/aa0000.png)| cc65-2.16-opt     | 414 |
-|                         | cc65-2.18-unopt   | 1401 |
-|                         | cc65-2.18-opt     | 414 |
-|                         | prog8-1.62        | n/a |
-|![](../images/ff7f27.png)| kickc-0.7.11      | 260 |
+|                         | cc65-2.16-unopt   | 739 |
+|![](../images/aa0000.png)| cc65-2.16-opt     | 396 |
+|                         | cc65-2.18-unopt   | 739 |
+|                         | cc65-2.18-opt     | 392 |
+|                         | vbcc-0.9h-unopt   | 313 |
+|![](../images/96c1ee.png)| vbcc-0.9h-opt     | 215 |
+|                         | prog8-3.0         | n/a |
+|![](../images/ff7f27.png)| kickc-0.8.2       | 279 |
 |                         | basic-boss        | n/a |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:216|414|260&chdl=mfk-0.3.10-O4|cc65-2.16-opt|kickc-0.7.11&chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=008000,aa0000,ff7f27&chxl=0:||&chds=0,500&chxr=1,0,500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:215|396|215|279&chdl=mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.2 &chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=008000,aa0000,96c1ee,ff7f27&chxl=0:||&chds=0,500&chxr=1,0,500)
 
+_Notes:_
+
+* There's a performance regression in this benchmark in KickC 0.8.
 
 ### Benchmark `romsum`
 
@@ -177,17 +192,19 @@ Results:
 |                         | symbol            | frames (less is better) |
 |-|-|-:|
 |![](../images/404040.png)| asm               | 51   |
-|                         | mfk-0.3.10-O1     | 97   |
-|![](../images/008000.png)| mfk-0.3.10-O4     | 75   |
-|                         | mfk-0.3.10-O4-ill | 75   |
-|                         | mfk-0.3.10-O4-ss  | n/a  |
+|                         | mfk-0.3.18-O1     | 81   |
+|![](../images/008000.png)| mfk-0.3.18-O4     | 75   |
+|                         | mfk-0.3.18-O4-ill | 75   |
+|                         | mfk-0.3.18-O4-ss  | n/a  |
 |![](../images/2200aa.png)| atalan-2011       | 96   |
-|                         | cc65-2.16-unopt   | 1141 |
-|![](../images/aa0000.png)| cc65-2.16-opt     | 169  |
-|                         | cc65-2.18-unopt   | 1141 |
-|                         | cc65-2.18-opt     | 169  |
-|                         | prog8-1.62        | 686  |
-|![](../images/ff7f27.png)| kickc-0.7.11      | 81   |
+|                         | cc65-2.16-unopt   | 310 |
+|![](../images/aa0000.png)| cc65-2.16-opt     | 127  |
+|                         | cc65-2.18-unopt   | 310 |
+|                         | cc65-2.18-opt     | 127  |
+|                         | vbcc-0.9h-unopt   | 161 |
+|![](../images/96c1ee.png)| vbcc-0.9h-opt     | 161 |
+|                         | prog8-3.0         | 686  |
+|![](../images/ff7f27.png)| kickc-0.8.2       | 81   |
 |                         | basic-boss        | n/a |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:51|75|169|81|96&chdl=asm|mfk-0.3.10-O4|cc65-2.16-opt|kickc-0.7.11|atalan-2011&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=x,y&chco=404040,008000,aa0000,ff7f27,2200aa&chxl=0:||&chds=0,500&chxr=1,0,200)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:51|75|127|81|96&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|kickc-0.8.2|atalan-2011&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,ff7f27,2200aa&chxl=0:||&chds=0,500&chxr=1,0,200)

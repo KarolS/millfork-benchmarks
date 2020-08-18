@@ -1,5 +1,9 @@
 #include "benchcommon.h"
-#include <conio.h>
+#if __VBCC__ 
+    #include "vbcc_c64_compat.h"
+#else
+    #include <conio.h>
+#endif
 
 #define SCREEN1               0xE000
 #define SCREEN2               0xE400

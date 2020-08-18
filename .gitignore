@@ -16,16 +16,23 @@
 *.nes
 *.o
 *.obj
+*.out
 *.prg
 *.tap
 *.TMP
+*.sym
 *.vice-mon-list
 *.xex
+*.zip
 *-c-*
 *-sccz80
 !benchcommon.asm
 
+**/sieve2.c
+**/romsum2.c
+
 65c02/
 65816/
 gb/
+stuff/
 

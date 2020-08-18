@@ -10,7 +10,7 @@ void round(void) {
     register unsigned char  I;
     memset(Sieve, 0, COUNT);
     I = 2;
-    while (I < SQRT_COUNT) {
+    do  {
         if (Sieve[I] == 0) {
             /* Prime number - mark multiples */
             S = &Sieve[I<<1];
@@ -20,7 +20,7 @@ void round(void) {
             }
         }
         ++I;
-    }
+    } while(I < SQRT_COUNT);
 }
 
 int main (void)

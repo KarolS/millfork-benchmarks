@@ -1,11 +1,11 @@
-import "benchcommon"
+#include "benchcommon.kc"
 
 struct node {
     struct node* next;
     unsigned int value;
 };
 
-struct node [4000] heap;
+struct node heap [4000];
 
 unsigned int free_;
 struct node* root;
@@ -63,7 +63,7 @@ int main(void) {
         for(i = 0; i < 3000; i++) {
             prepend(i);
         }
-        print_char((byte)sum());
+        print_uchar((byte)sum());
     }
     end();
     return 0;

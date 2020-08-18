@@ -1,17 +1,17 @@
-import "print"
-import "benchcommon"
+#include "print.h"
+#include "benchcommon.kc"
 
 const unsigned int COUNT = 16384;
 const byte SQRT_COUNT = 128;
 
-byte[COUNT] Sieve;
+byte align(0x100) Sieve [COUNT];
 
 void round(void) {
-    register byte* S;
-    register byte  I;
+    register byte* __zp S;
+    register byte  __zp I;
     memset(Sieve, 0, COUNT);
     I = 2;
-    while (I < SQRT_COUNT) {
+    do {
         if (Sieve[I] == 0) {
             /* Prime number - mark multiples */
             S = &Sieve[I<<1];
@@ -21,7 +21,7 @@ void round(void) {
             }
         }
         ++I;
-    }
+    } while (I < SQRT_COUNT);
 }
 
 int main (void)

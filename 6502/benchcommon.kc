@@ -1,5 +1,6 @@
-import "print"
-import "time"
+#include <print.h>
+#include <time.h>
+
 
 
 unsigned int last_time;
@@ -20,13 +21,13 @@ void end(void) {
     start();
     last_time -= Ticks;
     Ticks = last_time;
-    print_word(Ticks);
+    print_uint(Ticks);
     print_ln();
 }
 
 word rand_seed;
 
-byte rand() {
+byte my_rand() {
     const unsigned int* RAND_SEED = &rand_seed;
     asm{
         ldx #8

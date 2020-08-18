@@ -1,5 +1,5 @@
-import "benchcommon"
-import "c64"
+#include "benchcommon.kc"
+#include <c64.h>
 
 const word SCREEN1 = 0xE000;
 const word SCREEN2 = 0xE400;
@@ -98,7 +98,7 @@ void makechar (void)
         for (i = 0; i < 8; ++i){
             b = 0;
             for (ii = 0; ii < 8; ++ii) {
-                if ((rand() & 0xFF) > s) {
+                if ((my_rand() & 0xFF) > s) {
                     b |= bittab[ii];
                 }
             }

@@ -18,7 +18,7 @@ void init(void) {
 struct node* alloc() {
     struct node* result;
     result = heap + free_;
-    free_++;
+    ++free_;
     return result;
 }
 
@@ -46,9 +46,9 @@ int main(void) {
     unsigned int i;
     unsigned char c;
     start();
-    for(c = 0; c < 5; c++) {
+    for(c = 0; c < 5; ++c) {
         init();
-        for(i = 0; i < 3000; i++) {
+        for(i = 0; i < 3000; ++i) {
             prepend(i);
         }
         putchar((char)sum());

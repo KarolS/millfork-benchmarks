@@ -9,7 +9,7 @@ int main (void)
 {
     unsigned int i;
     start();
-    for(i=0;i<=24;i++) {
+    for(i=0;i<=24;++i) {
         putchar((char)(32 + fib(i)));
     }
     putchar(13);
