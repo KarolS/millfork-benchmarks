@@ -207,4 +207,4 @@ Results:
 |![](../images/ff7f27.png)| kickc-0.8.2       | 81   |
 |                         | basic-boss        | n/a |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:51|75|127|81|96&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|kickc-0.8.2|atalan-2011&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,ff7f27,2200aa&chxl=0:||&chds=0,500&chxr=1,0,200)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:51|75|127|161|81|96&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.2|atalan-2011&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27,2200aa&chxl=0:||&chds=0,500&chxr=1,0,200)
