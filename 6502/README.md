@@ -42,8 +42,6 @@ Remarks:
 
 * Language limitations make it very hard, if not impossible, to implement `fib` in KickC and `fib` and `linkedlist` in Prog8.
 
-* Due to bugs in Prog8, instead of calculating the time, start timestamp and end timestamp are displayed.
-
 * BASIC-BOSS was included as a curiosity, to compare the 1988 technology with more modern solutions. Due to various limitations, only the `sieve` benchmark was implemented and it displays the timing in decimal, not hexadecimal.
 
 * CC65 2.18 is not faster at these benchmarks than CC65 2.16.
