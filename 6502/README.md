@@ -30,7 +30,7 @@ These benchmarks compare the Millfork compiler with the most popular C compiler 
 |                         | cc65-2.18-opt     | CC65     | 2.18     | `cl65 -t c64 -r -Oirs`                                | recommended options for good code |
 |                         | vbcc-0.9h-unopt   | VBCC     | 0.9h     | `vc`                                                  | no optimizations |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | VBCC     | 0.9h     | `vc -O3`                                              | recommended options for good code |
-|                         | prog8-3.1         | Prog8    | 3.1      |                                                       | |
+|                         | prog8-3.2         | Prog8    | 3.2      |                                                       | |
 |![](../images/ff7f27.png)| kickc-0.8.2       | KickC    | 0.8.2    |                                                       | | 
 |                         | basic-boss        | BASIC-BOSS | 2.40   |                                                       | |
 
@@ -72,7 +72,7 @@ Results:
 |                         | cc65-2.18-opt     | 919 |
 |                         | vbcc-0.9h-unopt   | 992 |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | 992 |
-|                         | prog8-3.1         | 3913 |
+|                         | prog8-3.2         | 2389 |
 |![](../images/ff7f27.png)| kickc-0.8.2       | 992 |
 |                         | basic-boss        | 2406 |
 
@@ -102,7 +102,7 @@ Results:
 |                         | cc65-2.18-opt     | 4030 |
 |                         | vbcc-0.9h-unopt   | 3315 |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | 2505 |
-|                         | prog8-3.1         | n/a |
+|                         | prog8-3.2         | 7272 |
 |![](../images/ff7f27.png)| kickc-0.8.2       | 1994 |
 |                         | basic-boss        | n/a |
 
@@ -137,7 +137,7 @@ Results:
 |                         | cc65-2.18-opt     | 3261 |
 |                         | vbcc-0.9h-unopt   | 2915 |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | 2401 |
-|                         | prog8-3.1         | n/a |
+|                         | prog8-3.2         | n/a |
 |                         | kickc-0.8.2       | n/a |
 |                         | basic-boss        | n/a |
 
@@ -167,7 +167,7 @@ Results:
 |                         | cc65-2.18-opt     | 392 |
 |                         | vbcc-0.9h-unopt   | 313 |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | 215 |
-|                         | prog8-3.1         | n/a |
+|                         | prog8-3.2         | n/a |
 |![](../images/ff7f27.png)| kickc-0.8.2       | 279 |
 |                         | basic-boss        | n/a |
 
@@ -199,7 +199,7 @@ Results:
 |                         | cc65-2.18-opt     | 127  |
 |                         | vbcc-0.9h-unopt   | 161 |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | 161 |
-|                         | prog8-3.1         | 685  |
+|                         | prog8-3.2         | 456  |
 |![](../images/ff7f27.png)| kickc-0.8.2       | 81   |
 |                         | basic-boss        | n/a |
 
