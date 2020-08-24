@@ -7,12 +7,9 @@ main {
     sub sumrom() -> uword {
         uword p = rom
         uword s = 0
-        ubyte i
-        repeat $20 {
-            for i in 0 to $ff {
-                s += @(p+i)
-            }
-            p += $100
+        while(p) {
+            s += @(p)
+            p++
         }
         return s
     }
