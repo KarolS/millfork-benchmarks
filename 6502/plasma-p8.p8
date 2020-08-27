@@ -1,4 +1,4 @@
-%import c64lib
+%import c64textio
 
 
 ;/*****************************************************************************\
@@ -21,7 +21,7 @@ main {
 
     sub start() {
         c64.COLOR = 1
-        c64scr.print("creating charset...\n")
+        txt.print("creating charset...\n")
         makechar()
 
         benchcommon.begin()
@@ -41,7 +41,7 @@ main {
         c64.VMCSB = v
         c64.CIA2PRA = block
 
-        c64scr.print("done!\n")
+        txt.print("done!\n")
         benchcommon.end()
     }
 
@@ -130,9 +130,9 @@ benchcommon {
     sub end() {
         benchcommon.read_time()
 
-        c64scr.print_uwhex(benchcommon.last_time-benchcommon.time_start, false)
+        txt.print_uwhex(benchcommon.last_time-benchcommon.time_start, false)
         c64.CHROUT('\n')
 
-        void c64scr.input_chars($c000)
+        void txt.input_chars($c000)
     }
 }
