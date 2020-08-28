@@ -1,4 +1,4 @@
-%import c64lib
+%import c64textio
 
 
 ;/*****************************************************************************\
@@ -21,7 +21,7 @@ main {
 
     sub start() {
         c64.COLOR = 1
-        c64scr.print("creating charset...\n")
+        txt.print("creating charset...\n")
         makechar()
 
         benchcommon.begin()
@@ -41,7 +41,7 @@ main {
         c64.VMCSB = v
         c64.CIA2PRA = block
 
-        c64scr.print("done!\n")
+        txt.print("done!\n")
         benchcommon.end()
     }
 
@@ -61,22 +61,23 @@ main {
         ubyte @zp i
         ubyte @zp ii
 
-        for ii in 0 to 24 {
+        for ii in 24 downto 0 {
             ybuf[ii] = sin8u(c1a) + sin8u(c1b)
             c1a += 4
             c1b += 9
         }
         c1A += 3
         c1B -= 5
-        for i in 0 to 39 {
+        for i in 39 downto 0 {
             xbuf[i] = sin8u(c2a) + sin8u(c2b)
             c2a += 3
             c2b += 7
         }
         c2A += 2
         c2B -= 3
-        for ii in 0 to 24 {
-            for i in 0 to 39 {
+
+        for ii in 24 downto 0 {
+            for i in 39 downto 0 {
                 @(screen) = xbuf[i] + ybuf[ii]
                 screen++
             }
@@ -129,9 +130,9 @@ benchcommon {
     sub end() {
         benchcommon.read_time()
 
-        c64scr.print_uwhex(benchcommon.last_time-benchcommon.time_start, false)
+        txt.print_uwhex(benchcommon.last_time-benchcommon.time_start, false)
         c64.CHROUT('\n')
 
-        void c64scr.input_chars($c000)
+        void txt.input_chars($c000)
     }
 }

@@ -1,4 +1,4 @@
-%import c64utils
+%import c64textio
 
 main {
 
@@ -65,10 +65,10 @@ benchcommon {
     sub end() {
         benchcommon.read_time()
 
-        c64scr.print_uwhex(benchcommon.last_time-benchcommon.time_start, false)
+        txt.print_uwhex(benchcommon.last_time-benchcommon.time_start, false)
         c64.CHROUT('\n')
 
-        void c64scr.input_chars($c000)
+        void txt.input_chars($c000)
     }
 }
 
