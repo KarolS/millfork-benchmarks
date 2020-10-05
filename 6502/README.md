@@ -171,7 +171,7 @@ Results:
 |![](../images/ff7f27.png)| kickc-0.8.3       | 279 |
 |                         | basic-boss        | n/a |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:215|396|215|279&chdl=mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.3 &chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=008000,aa0000,96c1ee,ff7f27&chxl=0:||&chds=0,500&chxr=1,0,500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:215|396|215|279&chdl=mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.3&chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=008000,aa0000,96c1ee,ff7f27&chxl=0:||&chds=0,500&chxr=1,0,500)
 
 _Notes:_
 
