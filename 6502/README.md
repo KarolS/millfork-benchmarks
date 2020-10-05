@@ -30,8 +30,8 @@ These benchmarks compare the Millfork compiler with the most popular C compiler 
 |                         | cc65-2.18-opt     | CC65     | 2.18     | `cl65 -t c64 -r -Oirs`                                | recommended options for good code |
 |                         | vbcc-0.9h-unopt   | VBCC     | 0.9h     | `vc`                                                  | no optimizations |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | VBCC     | 0.9h     | `vc -O3`                                              | recommended options for good code |
-|                         | prog8-4.0         | Prog8    | 4.0      |                                                       | |
-|![](../images/ff7f27.png)| kickc-0.8.2       | KickC    | 0.8.2    |                                                       | | 
+|                         | prog8-4.4         | Prog8    | 4.4      |                                                       | |
+|![](../images/ff7f27.png)| kickc-0.8.3       | KickC    | 0.8.3    |                                                       | | 
 |                         | basic-boss        | BASIC-BOSS | 2.40   |                                                       | |
 
 Remarks:
@@ -72,11 +72,11 @@ Results:
 |                         | cc65-2.18-opt     | 919 |
 |                         | vbcc-0.9h-unopt   | 992 |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | 992 |
-|                         | prog8-4.0         | 2150 |
-|![](../images/ff7f27.png)| kickc-0.8.2       | 992 |
+|                         | prog8-4.4         | 2150 |
+|![](../images/ff7f27.png)| kickc-0.8.3       | 837 |
 |                         | basic-boss        | 2406 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:701|701|919|992|992|1375&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.2|atalan-2011&chtt=Sieve%20benchmark%20%28time%20in%20frames,%20less%20is%20better%29&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:701|701|919|992|992|1375&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.3|atalan-2011&chtt=Sieve%20benchmark%20%28time%20in%20frames,%20less%20is%20better%29&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
 
 ### Benchmark `plasma`
 
@@ -102,8 +102,8 @@ Results:
 |                         | cc65-2.18-opt     | 4030 |
 |                         | vbcc-0.9h-unopt   | 3315 |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | 2505 |
-|                         | prog8-4.0         | 5866 |
-|![](../images/ff7f27.png)| kickc-0.8.2       | 1994 |
+|                         | prog8-4.4         | 5569 |
+|![](../images/ff7f27.png)| kickc-0.8.3       | 1993 |
 |                         | basic-boss        | n/a |
 
 _Notes:_
@@ -137,8 +137,8 @@ Results:
 |                         | cc65-2.18-opt     | 3261 |
 |                         | vbcc-0.9h-unopt   | 2915 |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | 2401 |
-|                         | prog8-4.0         | n/a |
-|                         | kickc-0.8.2       | n/a |
+|                         | prog8-4.4         | n/a |
+|                         | kickc-0.8.3       | n/a |
 |                         | basic-boss        | n/a |
 
 ![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1309|1476|1783|3261|2401&chdl=asm|mfk-0.3.18-O4|mfk-0.3.18-O4-ss|cc65-2.16-opt|vbcc-0.9h-opt&chtt=Fibonacci%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,66e266,aa0000,96c1ee&chxl=0:||&chds=0,4000&chxr=1,0,4000)
@@ -167,11 +167,11 @@ Results:
 |                         | cc65-2.18-opt     | 392 |
 |                         | vbcc-0.9h-unopt   | 313 |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | 215 |
-|                         | prog8-4.0         | n/a |
-|![](../images/ff7f27.png)| kickc-0.8.2       | 279 |
+|                         | prog8-4.4         | n/a |
+|![](../images/ff7f27.png)| kickc-0.8.3       | 279 |
 |                         | basic-boss        | n/a |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:215|396|215|279&chdl=mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.2 &chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=008000,aa0000,96c1ee,ff7f27&chxl=0:||&chds=0,500&chxr=1,0,500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:215|396|215|279&chdl=mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.3 &chtt=Linked%20list%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=008000,aa0000,96c1ee,ff7f27&chxl=0:||&chds=0,500&chxr=1,0,500)
 
 _Notes:_
 
@@ -199,8 +199,8 @@ Results:
 |                         | cc65-2.18-opt     | 127  |
 |                         | vbcc-0.9h-unopt   | 161 |
 |![](../images/96c1ee.png)| vbcc-0.9h-opt     | 161 |
-|                         | prog8-4.0         | 215  |
-|![](../images/ff7f27.png)| kickc-0.8.2       | 81   |
+|                         | prog8-4.4         | 119  |
+|![](../images/ff7f27.png)| kickc-0.8.3       | 81   |
 |                         | basic-boss        | n/a |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:51|75|127|161|81|96&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.2|atalan-2011&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27,2200aa&chxl=0:||&chds=0,500&chxr=1,0,200)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:51|75|127|161|81|96&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|kickc-0.8.3|atalan-2011&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27,2200aa&chxl=0:||&chds=0,500&chxr=1,0,200)

@@ -10,11 +10,11 @@ main {
         uword S
         ubyte I = 2
         memset(Sieve, COUNT, 0)
-        txt.print("primes: ")
+        ; txt.print("primes: ")
         while I < SQRT_COUNT {
             if @(Sieve + I) == 0 {
-                txt.print_ub(I)
-                txt.chrout(' ')
+                ; txt.print_ub(I)
+                ; txt.chrout(' ')
                 S = Sieve + (I << 1)
                 while S < Sieve + COUNT {
                     @(S) = 1
@@ -23,7 +23,7 @@ main {
             }
             I ++
         }
-        txt.chrout('\n')
+        ; txt.chrout('\n')
     }
 
     sub start() {
