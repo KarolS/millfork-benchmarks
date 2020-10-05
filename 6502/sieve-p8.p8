@@ -1,4 +1,4 @@
-%import c64textio
+%import textio
 
 main {
 
@@ -10,8 +10,11 @@ main {
         uword S
         ubyte I = 2
         memset(Sieve, COUNT, 0)
+        txt.print("primes: ")
         while I < SQRT_COUNT {
             if @(Sieve + I) == 0 {
+                txt.print_ub(I)
+                txt.chrout(' ')
                 S = Sieve + (I << 1)
                 while S < Sieve + COUNT {
                     @(S) = 1
@@ -20,6 +23,7 @@ main {
             }
             I ++
         }
+        txt.chrout('\n')
     }
 
     sub start() {
@@ -66,7 +70,7 @@ benchcommon {
         benchcommon.read_time()
 
         txt.print_uwhex(benchcommon.last_time-benchcommon.time_start, false)
-        c64.CHROUT('\n')
+        txt.chrout('\n')
 
         void txt.input_chars($c000)
     }

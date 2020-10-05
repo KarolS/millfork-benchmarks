@@ -1,4 +1,4 @@
-%import c64textio
+%import textio
 
 main {
 
@@ -7,7 +7,7 @@ main {
     sub sumrom() -> uword {
         uword p = rom
         uword s = 0
-        while(p) {
+        while p {
             s += @(p)
             p++
         }
@@ -19,7 +19,7 @@ main {
         ubyte i
         for i in 0 to 5 {
             txt.print_uw(sumrom())
-            c64.CHROUT('\n')
+            txt.chrout('\n')
         }
         benchcommon.end()
     }
@@ -49,7 +49,7 @@ benchcommon {
         benchcommon.read_time()
 
         txt.print_uwhex(benchcommon.last_time-benchcommon.time_start, false)
-        c64.CHROUT('\n')
+        txt.chrout('\n')
 
         void txt.input_chars($c000)
     }

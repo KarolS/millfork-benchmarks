@@ -1,15 +1,11 @@
-%import c64textio
+%import textio
 
+;  converted from plasma test program for cc65.
+;  which is (w)2001 by groepaz/hitmen
+; 
+;  Cleanup and porting to C by Ullrich von Bassewitz.
+;  Converted to prog8 by Irmen de Jong.
 
-;/*****************************************************************************\
-;** plasma test program for cc65.                                             **
-;**                                                                           **
-;** (w)2001 by groepaz/hitmen                                                 **
-;**                                                                           **
-;** Cleanup and porting by Ullrich von Bassewitz.                             **
-;** Converted to prog8 by Irmen de Jong                                       **
-;**                                                                           **
-;\*****************************************************************************/
 
 main {
     const uword SCREEN1 = $E000
@@ -76,9 +72,11 @@ main {
         c2A += 2
         c2B -= 3
 
+        ubyte cc
         for ii in 24 downto 0 {
             for i in 39 downto 0 {
-                @(screen) = xbuf[i] + ybuf[ii]
+                cc = xbuf[i] + ybuf[ii]
+                @(screen) = cc
                 screen++
             }
         }
@@ -100,7 +98,7 @@ main {
                         b |= bittab[ii]
                     }
                 }
-                @(CHARSET + i + c*8.w) = b
+                @(CHARSET + i + c*$0008) = b
             }
         }
     }
