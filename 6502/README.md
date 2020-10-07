@@ -76,7 +76,7 @@ Results:
 |![](../images/ff7f27.png)| kickc-0.8.3       | 993 |
 |                         | basic-boss        | 2406 |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:701|701|919|992|837|993|1375&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|prog8-4.4|kickc-0.8.3|atalan-2011&chtt=Sieve%20benchmark%20%28time%20in%20frames,%20less%20is%20better%29&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:701|701|919|992|837|993|1375&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|prog8-4.4|kickc-0.8.3|atalan-2011&chtt=Sieve%20benchmark%20%28time%20in%20frames,%20less%20is%20better%29&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,b02ce2,ff7f27,2200aa&chxl=0:||&chds=0,1500&chxr=1,0,1500)
 
 ### Benchmark `plasma`
 
@@ -112,7 +112,7 @@ _Notes:_
 
 
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003|2505|5569|1993&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|prog8-4.4|kickc-0.8&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27&chxl=0:||&chds=0,50000&chxr=1,0,5000)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:1754|1780|4003|2505|5569|1993&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|prog8-4.4|kickc-0.8&chtt=Plasma%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,b02ce2,ff7f27&chxl=0:||&chds=0,50000&chxr=1,0,6000)
 
 
 ### Benchmark `fib`
@@ -203,4 +203,4 @@ Results:
 |![](../images/ff7f27.png)| kickc-0.8.3       | 81   |
 |                         | basic-boss        | n/a |
 
-![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:51|75|127|161|81|96&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|prog8-4.4|kickc-0.8.3|atalan-2011&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,ff7f27,2200aa&chxl=0:||&chds=0,500&chxr=1,0,200)
+![](https://image-charts.com/chart?cht=bhg&chs=700x400&chd=t:51|75|127|161|119|81|96&chdl=asm|mfk-0.3.18-O4|cc65-2.16-opt|vbcc-0.9h-opt|prog8-4.4|kickc-0.8.3|atalan-2011&chtt=ROM%20sum%20benchmark%20(time%20in%20frames,%20less%20is%20better)&chma=10,10&chxt=y,x&chco=404040,008000,aa0000,96c1ee,b02ce2,ff7f27,2200aa&chxl=0:||&chds=0,500&chxr=1,0,200)
