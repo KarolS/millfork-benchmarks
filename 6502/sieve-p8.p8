@@ -9,7 +9,7 @@ main {
     sub sieve_round() {
         uword S
         ubyte I = 2
-        memset(Sieve, COUNT, 0)
+        sys.memset(Sieve, COUNT, 0)
         ; txt.print("primes: ")
         while I < SQRT_COUNT {
             if @(Sieve + I) == 0 {
