@@ -2,7 +2,7 @@
 
 ;  converted from plasma test program for cc65.
 ;  which is (w)2001 by groepaz/hitmen
-; 
+;
 ;  Cleanup and porting to C by Ullrich von Bassewitz.
 ;  Converted to prog8 by Irmen de Jong.
 
@@ -76,9 +76,9 @@ main {
         for ii in 24 downto 0 {
             for i in 39 downto 0 {
                 cc = xbuf[i] + ybuf[ii]
-                @(screen) = cc
-                screen++
+                @(screen+i) = cc
             }
+            screen += 40
         }
     }
 
