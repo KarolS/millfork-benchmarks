@@ -40,7 +40,7 @@ Remarks:
 
 * I haven't been able to make Atalan compile benchmarks other than `sieve` and `romsum` without crashing.
 
-* Language limitations make it very hard, if not impossible, to implement `fib` in KickC and `fib` and `linkedlist` in Prog8.
+* Language limitations make it very hard, if not impossible, to implement `fib` in KickC and `fib` in Prog8.
 
 * BASIC-BOSS was included as a curiosity, to compare the 1988 technology with more modern solutions. Due to various limitations, only the `sieve` benchmark was implemented and it displays the timing in decimal, not hexadecimal.
 
@@ -146,7 +146,7 @@ Results:
 
 ### Benchmark `linkedlist`
 
-Source: [`linkedlist.c`](./linkedlist.c), [`linkedlist.mfk`](./linkedlist.mfk), [`linkedlist-kc.kc`](./linkedlist-kc.kc)
+Source: [`linkedlist.c`](./linkedlist.c), [`linkedlist.mfk`](./linkedlist.mfk), [`linkedlist-kc.kc`](./linkedlist-kc.kc) [`linkedlist-p8.p8`](./linkedlist-p8.p8)
 
 The benchmark creates a single-linked list with 3000 entries, with a 16-bit integer at each node, and then traverses the list and sums all the values together. It does it five times, for more precise results.
  
