@@ -3,17 +3,12 @@
 ; note: requires at least Prog8 6.1 to compile
 
 main {
-    struct Node {
-        uword next
-        uword value
-    }
-
     uword  free
     uword  root
     uword  heap
 
     sub start() {
-        heap = memory("heap", 4000*sizeof(Node))
+        heap = memory("heap", 4000*4)
 
         benchcommon.begin()
         repeat 5 {
@@ -35,7 +30,7 @@ main {
 
     sub alloc() -> uword {
         uword result = free
-        result *= sizeof(Node)
+        result *= 4
         result += heap
         free++
         return result
